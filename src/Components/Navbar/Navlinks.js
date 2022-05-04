@@ -1,9 +1,4 @@
 import React, { useState } from 'react';
-// import Home from '../NavBar-Category/Home';
-// import Blog from '../NavBar-Category/Blog';
-// import Gallery from '../NavBar-Category/Gallery';
-// import Contact from '../NavBar-Category/Contact';
-// import About from '../NavBar-Category/About';
 import {  Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -39,13 +34,7 @@ const Navlinks = () => {
             <li className='pb-10'><Link to="/aboutUs">ABOUT US</Link></li>
         </ul>
         </div>
-        {/* <Routes>
-            <Route index element={<Home/>}/>
-            <Route path="gallery" element={<Gallery/>}/>
-            <Route path='blog' element={<Blog/>}/>
-            <Route path='contactUs' element={<Contact/>}/>
-            <Route path='aboutUs' element={<About/>}/>
-        </Routes> */}
+        
         </div>
         
         </>
