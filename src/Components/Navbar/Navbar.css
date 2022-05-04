@@ -1,0 +1,10 @@
+.logo{
+
+    clip-path: polygon(0 0, 83% 0, 100% 100%, 0% 100%);
+}
+.nav-top{
+    clip-path: polygon(0 0, 93% 0, 90% 100%, 18% 100%);
+}
+.nav-inner{
+    clip-path: polygon(7% 0%, 82% 0%, 95% 100%, 20% 100%);
+}
