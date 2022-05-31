@@ -1,0 +1,8 @@
+{
+    "posts":[
+        {"id":1,"title":"Enjoying the classical art","Author":"Admin","SubCategory":"Nature","discription":"Siddhartha Gautama, the Lord Buddha, was born in 623 B.C. in the famous gardens of Lumbini, which soon became a place of pilgrimage. Among the pilgrims was the Indian emperor Ashoka, who erected one of his commemorative pillars there."},
+        {"id":2,"title":"Enjoying the classical art","Author":"Shrish","SubCategory":"Science","discription":"Science generates solutions for everyday life and helps us to answer the great mysteries of the universe. In other words, science is one of the most important channels of knowledge."},
+
+        {"id":3,"title":"Enjoying the classical art","Author":"Roman","SubCategory":"History","discription":"Science generates solutions for everyday life and helps us to answer the great mysteries of the universe. In other words, science is one of the most important channels of knowledge."}
+    ]
+}
