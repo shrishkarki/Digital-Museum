@@ -5,7 +5,9 @@ import Category from '../../SharedComponent/Category';
 import Container from '../../SharedComponent/Container';
 
 import { Outlet} from 'react-router-dom';
-import SimpleSlider from '../../SharedComponent/SlideCategory';
+
+import SlideCategory from '../../SharedComponent/SlideCategory';
+
 // import FilterCatergory from './FilterCatergory';
 
 const Gallery = () => {
@@ -17,7 +19,7 @@ const Gallery = () => {
     <Category path="gallery" />
     </div> */}
    
-    <SimpleSlider path="gallery"/>
+    <SlideCategory path="gallery"/>
      <Outlet/>
        
     </>

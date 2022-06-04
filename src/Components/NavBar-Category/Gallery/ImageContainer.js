@@ -1,8 +1,8 @@
 import React from 'react';
-import { usePosts } from '../../FetchDatas/DummyJson';
+import { useDemo } from '../../FetchDatas/DummyJson';
 
 const ImageContainer = ({ type }) => {
-  const datas = usePosts();
+  const datas = useDemo();
   const imageFilter = datas.filter(data => {
     // return data.subCategory===type
     if (type === 'All') {

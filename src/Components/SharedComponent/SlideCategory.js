@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-export default function Carousel({path}) {
+export default function SlideCategory({path}) {
   const [sliderRef, setSliderRef] = useState(null)
 
   const sliderSettings = {

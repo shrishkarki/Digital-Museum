@@ -65,7 +65,7 @@ function App() {
           <Route path='aboutUs' element={<About />} />
           <Route path='createnewblog' element={<CreateBlogs/>}/>
 
-          <Route path='blog/:category/:id' element={<EachBlogPost />} />
+          <Route path='blog/:category/:slug' element={<EachBlogPost />} />
 
         </Routes>
         <Footer/>
