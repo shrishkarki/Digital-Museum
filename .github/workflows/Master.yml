@@ -1,6 +1,7 @@
 on: 
 push:
-  branches: master
+  branches: 
+       - master
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
@@ -26,4 +27,4 @@ jobs:
         server: ${{ secrets.servername }}
         username: ${{ secrets.username }}
         password: ${{ secrets.password }}
-        server-dir: /home/yatharup//production.yatharup.com
+        server-dir: /public_html/production.yatharup.com

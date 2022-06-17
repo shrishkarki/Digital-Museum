@@ -1,6 +1,7 @@
 on: 
 push:
-  branches: staging
+  branches: 
+       - staging
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
@@ -26,4 +27,4 @@ jobs:
         server: s530
         username: ${{ secrets.username }}
         password: ${{ secrets.password }}
-        server-dir: /home/yatharup//staging.yatharup.com
+        server-dir: /public_html/staging.yatharup.com
