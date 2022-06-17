@@ -1,5 +1,5 @@
 on: 
-push:
+ push:
   branches: 
        - staging
 name: 🚀 Deploy website on push
