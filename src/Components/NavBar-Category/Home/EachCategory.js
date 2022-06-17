@@ -62,7 +62,6 @@ const EachCategory = ({ items }) => {
 
 
 
-                                {/* <div className='border-b-2 border-amber-500 w-20  hover:w-full'></div> */}
 
 
 

@@ -25,24 +25,71 @@ export const usePosts = () => {
 } 
 
 
-export const useDemo = () => {
-  const [post,setPost]=useState([]);
+
+
+
+export const useCategory = () => {
+  const [categories,setCategories]=useState([]);
  
-  const demoApi=axios.create({
+  const categoryApi=axios.create({
    
-     baseURL:"http://localhost:3006/posts"
+     baseURL:"https://digitalmuseum.herokuapp.com/blogs/categories"
   })
 
   useEffect(()=>{
        const getData= async()=>{
-        console.log("second usePost ");
-          const res= await demoApi.get();
+       
+          const res= await categoryApi.get();
 
-          setPost(res.data);
+          setCategories(res.data);
       }
       getData();
      
   },[])
-  return post;
+  return categories;
 } 
+
+
+
+export const useTrippleData=(categoryParam)=>{
+  const [trippleData,setTrippleData]=useState("");
+
+  const trippleDataApi=axios.create({
+   
+    baseURL:`https://digitalmuseum.herokuapp.com/blogs?limit=3&category=${categoryParam}`
+ })
+
+ useEffect(()=>{
+   const getData=async()=>{
+    const res= await trippleDataApi.get();
+
+    setTrippleData(res.data);
+   }
+   getData();
+ },[])
+ return trippleData;
+}
+
+
+// export const useEachBlogPost=(slugData)=>{
+
+//   const [eachBlogPost,setEachBlogPost]=useState('');
+
+
+//   const eachPostApi=axios.create({
+//     baseURL:`https://digitalmuseum.herokuapp.com/blogs/b/${slugData}/`
+//   })
+
+//   useEffect(()=>{
+    
+//     const getData=async()=>{
+//       console.log("inside async await function")
+//       const res=await eachPostApi.get();
+//       setEachBlogPost(res)
+
+//     }
+//     getData();
+//   },[])
+// return eachBlogPost;
+// }
 

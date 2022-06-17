@@ -11,6 +11,10 @@ import FilterBlogPost from "./Components/NavBar-Category/Blog/FilterBlogPost";
 import EachBlogPost from "./Components/NavBar-Category/Blog/EachBlogPost";
 import CreateBlogs from './Components/CreateBlogs/CreateBlogs';
 import Footer from "./Components/Footer/Footer";
+import Login from './Components/Authentication/Login';
+import SignUp from './Components/Authentication/SignUp';
+import OtpHandle from './Components/Authentication/OtpHandle';
+import Error10 from './Components/ErrorPage/ErrorPage';
 
 // import { usePosts } from "./Components/FetchDatas/DummyJson";
 
@@ -27,7 +31,7 @@ function App() {
           <Route index element={<Home />} />
 
           <Route path="gallery" element={<Gallery />} >
-            {/* <Route index element={<Gallery />} /> */}
+           
 
             <Route path="All" element={<ImageContainer type="All" />} />
             <Route path="Personal" element={<ImageContainer type="Personal" />} />
@@ -40,7 +44,8 @@ function App() {
             <Route path="Aviation" element={<ImageContainer type="Aviation" />} />
             <Route path="Agriculture" element={<ImageContainer type="Agriculture" />} />
             <Route path="Biography" element={<ImageContainer type="Biography" />} />
-            <Route path="Botanicals & Zoology" element={<ImageContainer type="Botanicals & Zoology" />} />
+            <Route path="Zoology" element={<ImageContainer type="Zoology" />} />
+            <Route path="Botanicals" element={<ImageContainer type="Botanical" />} />
 
           </Route>
 
@@ -59,13 +64,18 @@ function App() {
             <Route path="Aviation" element={<FilterBlogPost type="Aviation" />} />
             <Route path="Agriculture" element={<FilterBlogPost type="Agriculture" />} />
             <Route path="Biography" element={<FilterBlogPost type="Biography" />} />
-            <Route path="Botanicals & Zoology" element={<FilterBlogPost type="Botanicals & Zoology" />} />
+            <Route path="Botanical" element={<FilterBlogPost type="Botanical" />} />
+            <Route path="Zoology" element={<FilterBlogPost type="Zoology" />} />
           </Route>
           <Route path='contactUs' element={<Contact />} />
           <Route path='aboutUs' element={<About />} />
           <Route path='createnewblog' element={<CreateBlogs/>}/>
 
           <Route path='blog/:category/:slug' element={<EachBlogPost />} />
+          <Route path='Login' element={<Login/>}/>
+          <Route path='SignUp' element={<SignUp/>}/>
+          <Route path='SignUp/Verify-OTP'  element={<OtpHandle/>}/>
+          <Route path='*' element={<Error10/>}/>
 
         </Routes>
         <Footer/>

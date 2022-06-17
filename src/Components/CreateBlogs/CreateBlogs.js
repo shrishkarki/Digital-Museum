@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CreateImage from '../../assets/kudan1.jpg';
 import Container from '../SharedComponent/Container';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import authHeader from '../SharedComponent/AuthHeader';
+
 
 
 const CreateBlogs = () => {
+    const navigate=useNavigate();
+
+
+    useEffect(()=>{
+        if(!localStorage.getItem("token")){
+            navigate("/login")
+        }
+    },[])
+   
     const URL = "https://digitalmuseum.herokuapp.com/blogs/";
     const [formData, setFormData] = useState({
         title: "",
@@ -54,9 +66,10 @@ console.log(images);
         axios({
             url: URL,
             method: 'POST',
-            headers: {
-                authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg1NTQ5NzExLCJpYXQiOjE2NTQwMTM3MTEsImp0aSI6ImYwZjk3MjQ1N2I4MDQ0Njg5ZTlkM2Q0ZDQ4MjEzZWE2IiwidXNlcl9pZCI6MX0.XiHcrtaS0eFXkNV7OLaVAZrpDyX7ey4ikxYnfN_4x0g"
-            },
+            // headers: {
+            //     authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg1NTQ5NzExLCJpYXQiOjE2NTQwMTM3MTEsImp0aSI6ImYwZjk3MjQ1N2I4MDQ0Njg5ZTlkM2Q0ZDQ4MjEzZWE2IiwidXNlcl9pZCI6MX0.XiHcrtaS0eFXkNV7OLaVAZrpDyX7ey4ikxYnfN_4x0g"
+            // },
+            headers:authHeader(),
             data: fd
         }).then(res => {
             console.log(res.data)

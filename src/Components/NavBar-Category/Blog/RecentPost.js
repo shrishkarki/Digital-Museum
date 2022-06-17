@@ -10,14 +10,14 @@ const RecentPost = () => {
 
     return (
         <>
-            <h3 className='font-extrabold mt-6 mb-2'>RECENT POSTS</h3>
+            <h3 className='font-extrabold md:mt-3 lg:mt-6 mb-2'>RECENT POSTS</h3>
             <div className='border-[1px] border-amber-400 w-full'></div>
             { requiredData && requiredData.map(data => {
 
 
                     return (
                         <ul className='list-disc list-outside ml-4'>
-                            <li key={data.id} className="font-semibold text-[16px] mb-[5px] text-gray-500 cursor-pointer text-inside" onClick={() => navigate(`/blog/${data.subcategory}/${data.id}`)}>{data.title}</li></ul>
+                            <li key={data.id} className="font-semibold text-[16px] mb-[5px] text-gray-500 cursor-pointer text-inside " onClick={() => navigate(`/blog/${data.subcategory}/${data.id}`)}> {data.title}</li></ul>
                     )
                 })
             }
@@ -34,7 +34,7 @@ const RecentPost = () => {
                         <div className='flex cursor-pointer' onClick={() => navigate(`/blog/${data.category}/${data.id}`)}>
                             {singleImage.map(eachImage=>(<img src={eachImage.image_url} alt={data.category} className='w-[130px] h-[100px] mb-6' />))}
                             <div className='pl-1'>
-                                <p className='text-[15px] break-all hover:underline-offset-2'>{data.title}</p>
+                                <p className='text-[15px] break-all hover:underline-offset-2 '>{data.title}</p>
                                 <div className='flex text-xs mt-2'>
                                     <AiOutlineClockCircle fontSize={15} /> &nbsp;<span>{date}</span>
                                     &nbsp;<span>{month}</span>  &nbsp;<span>{year}</span>

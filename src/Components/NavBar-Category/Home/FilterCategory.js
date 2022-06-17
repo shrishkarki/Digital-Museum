@@ -1,37 +1,26 @@
 
 
-import { usePosts, useDemo } from '../../FetchDatas/DummyJson'
-import EachCategory from './EachCategory';
+import { useCategory } from '../../FetchDatas/DummyJson';
+import EachCategoryLists from './EachCategoryLists';
+// import EachCategory from './EachCategory';
 
 const FilterCategory = () => {
 
-  const { results } = usePosts();
 
-
-
-  const categoryValues = ['Personal', 'Eco-musuem', 'History', 'Nature', 'Archelogy', 'Science', 'Art & craft', 'Aviation', 'Agriculture', 'Biography', 'Botanical ', 'Zoology'];
-
-  const sortedCategory = categoryValues.map(cat => {
-    return {
-      categories: (results && results.filter(dat => dat.category === cat).slice(0, 3)),
-      categoryName: cat,
-
-    }
-  })
-  
-
+  const categoriesList=useCategory();
 
   return (
     <>
-      <div className='flex flex-col'>
-        
-        {
-          sortedCategory && sortedCategory.map((sorted) => {
-            return (
-              <div>
-                {sorted.categories && <EachCategory items={sorted} />}
-              </div>
-            )
+      <div className='flex flex-col '>
+    {
+          categoriesList && categoriesList.map(eachCat=>{
+           
+
+           return (
+             <EachCategoryLists eachCategory={eachCat.name}/>
+           )
+
+         
           })
         }
 
@@ -42,4 +31,4 @@ const FilterCategory = () => {
   )
 }
 
-export default FilterCategory
+export default FilterCategory;

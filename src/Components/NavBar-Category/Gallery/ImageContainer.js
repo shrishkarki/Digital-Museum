@@ -1,17 +1,21 @@
-import React from 'react';
-import { useDemo } from '../../FetchDatas/DummyJson';
+
+import { usePosts } from '../../FetchDatas/DummyJson';
 
 const ImageContainer = ({ type }) => {
-  const datas = useDemo();
-  const imageFilter = datas.filter(data => {
-    // return data.subCategory===type
+  const datas=usePosts();
+  
+  
+  const imageFilter =datas && datas.results.filter(data => {
+  
     if (type === 'All') {
-      return datas
+      return datas.results
     }
     else {
-      return data.subCategory === type
+      return data.category === type
     }
   })
+
+
 
   return (
     <>
@@ -20,18 +24,23 @@ const ImageContainer = ({ type }) => {
           <div className="flex flex-wrap m-1 md:-m-2">
 
 
-            {imageFilter.map(filterData => {
+            {imageFilter && imageFilter.map(filterData => {
+              const singleImage=[...filterData.images.slice(0,1)]
               return <div className="flex flex-wrap w-1/2  tmd:w-1/3   ">
-                <div className="w-full relative rounded-lg  bg-gradient-to-r from-amber-500  to-slate-500  tmd:bg-none tmd:hover:bg-gradient-to-r from-amber-500 to-slate-500  m-1 md:m-2 duration-300 ease-in-out hover:scale-[1.06] ">
+                <div className="w-full relative rounded-lg   tmd:bg-none tmd:hover:bg-gradient-to-r from-amber-500 to-slate-500  m-1 md:m-2 duration-300 ease-in-out hover:scale-[1.06] ">
+                {/* <div className="w-full relative rounded-lg  hover:bg-gradient-to-r from-amber-500  to-slate-500  tmd:bg-none   m-1 md:m-2 duration-300 ease-in-out hover:scale-[1.06] "> */}
 
-                  <img alt="gallery" className="  block object-cover object-center shadow-md shadow-black w-full h-full scale-100 rounded-lg mix-blend-multiply"
-                    src={filterData.image}></img>
+                 {singleImage.map(eachImg=>(<img alt="gallery" className="  block object-cover object-center shadow-md shadow-black w-full h-full scale-100 rounded-lg mix-blend-multiply"
+                    src={eachImg.image_url}/>)) }
 
                   <div className=' tmd:opacity-0 tmd:hover:opacity-100 absolute rounded-lg top-0  right-0 bottom-0 left-0 w-full h-full  overflow-hidden bg-fixed  text-white'>
-                  <p className='px-4 absolute top-[45%]'>{filterData.title}</p>
-                  <div className='border-t-[1px] border-solid border-zinc-200 w-full'></div>
+                   
+                    <p className='px-3 absolute top-[75%] truncate text-lg backdrop-blur-3xl w-full capitalize'>{filterData.title}</p>
+                  {/* <div className='border-t-[1px] border-solid border-zinc-200 w-full'></div> */}
                   
-                  <figcaption><span>30 Likes</span><span></span></figcaption>
+                  <figcaption className='px-6 absolute top-[80%] mt-4 backdrop-blur-3xl w-full'><span>{filterData.like_count} Likes</span><span></span></figcaption>
+                   
+                  
                   
                   </div>
                 
