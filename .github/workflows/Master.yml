@@ -1,6 +1,6 @@
 on: 
 push:
-  branches: staging
+  branches: master
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
@@ -23,7 +23,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: s530
+        server: ${{ secrets.servername }}
         username: ${{ secrets.username }}
         password: ${{ secrets.password }}
-        server-dir: /staging.yatharup.com
+        server-dir: /production.yatharup.com
