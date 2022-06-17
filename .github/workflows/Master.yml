@@ -26,4 +26,4 @@ jobs:
         server: ${{ secrets.servername }}
         username: ${{ secrets.username }}
         password: ${{ secrets.password }}
-        server-dir: /production.yatharup.com
+        server-dir: /home/yatharup//production.yatharup.com
