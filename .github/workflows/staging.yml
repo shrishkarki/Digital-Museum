@@ -26,4 +26,4 @@ jobs:
         server: s530
         username: ${{ secrets.username }}
         password: ${{ secrets.password }}
-        server-dir: /staging.yatharup.com
+        # server-dir: /staging.yatharup.com
