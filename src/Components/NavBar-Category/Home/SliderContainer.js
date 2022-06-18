@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Slider from 'react-slick'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import SlideImg1 from '../../../assets/pic1.jpg';

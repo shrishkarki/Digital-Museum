@@ -1,6 +1,8 @@
+import React from "react";
 import pic1 from "../../../assets/pic1.jpg";
 import pic2 from "../../../assets/kudan1.jpg";
 import pic3 from "../../../assets/Tilaurakot1.jpg";
+
 const Header = () => {
   // const [menu, setMenu] = useState(false);
   return (

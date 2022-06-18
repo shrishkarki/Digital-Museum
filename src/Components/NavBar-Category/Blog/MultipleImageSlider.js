@@ -1,24 +1,25 @@
-import { useState } from 'react'
-import Slider from 'react-slick'
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-// import { Link } from 'react-router-dom';
+// import React,{ useState } from 'react'
+// import Slider from 'react-slick'
+// import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+
+// import 'slick-carousel/slick/slick.css'
+// import 'slick-carousel/slick/slick-theme.css'
+import React from "react";
 
 export default function MultipleImageSlider({imageList}) {
-  const [sliderRef, setSliderRef] = useState(null);
-  const sliderSettings = {
-    arrows: false,
-    dots:true,
-    slidesToShow:1,
-    infinite: false,
-    speed:300,
-    slidesToScroll: 1,
-  }
+  // const [sliderRef, setSliderRef] = useState(null);
+  // const sliderSettings = {
+  //   arrows: false,
+  //   dots:true,
+  //   slidesToShow:1,
+  //   infinite: false,
+  //   speed:300,
+  //   slidesToScroll: 1,
+  // }
   return (
     <div className='content relative'>
-    <div className='controls'>
+    {/* <div className='controls'>
      {imageList.length>1 && <button onClick={sliderRef?.slickPrev} className="  absolute top-[45%] z-10 border-2 rounded-full p-[2px] md:p-1 hover:">
         <FaChevronLeft />
       </button>}
@@ -26,8 +27,8 @@ export default function MultipleImageSlider({imageList}) {
         <FaChevronRight />
       </button>
        }
-    </div>
-    <Slider ref={setSliderRef} {...sliderSettings}  >
+    </div> */}
+    {/* <Slider ref={setSliderRef} {...sliderSettings}  > */}
       
 
       
@@ -36,7 +37,7 @@ export default function MultipleImageSlider({imageList}) {
           <img src={list.image_url} alt="images" className='w-full h-[280px] tmd:h-[250px] lg:h-96 '/>
           </div>
       })}
-      </Slider>
+      {/* </Slider> */}
   </div>
   )
 }
