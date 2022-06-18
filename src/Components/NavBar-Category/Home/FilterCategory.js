@@ -1,5 +1,4 @@
-
-
+import React from 'react';
 import { useCategory } from '../../FetchDatas/DummyJson';
 import EachCategoryLists from './EachCategoryLists';
 // import EachCategory from './EachCategory';
