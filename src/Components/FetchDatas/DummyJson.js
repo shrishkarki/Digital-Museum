@@ -19,7 +19,7 @@ export const usePosts = () => {
         }
         getData();
        
-    },[])
+    },[dummyApi])
     return posts;
     
 } 
@@ -45,7 +45,7 @@ export const useCategory = () => {
       }
       getData();
      
-  },[])
+  },[categoryApi])
   return categories;
 } 
 
@@ -66,7 +66,7 @@ export const useTrippleData=(categoryParam)=>{
     setTrippleData(res.data);
    }
    getData();
- },[])
+ },[trippleDataApi])
  return trippleData;
 }
 

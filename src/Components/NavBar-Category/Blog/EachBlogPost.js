@@ -20,7 +20,7 @@ const EachBlogPost = () => {
   const [datas, setDatas] = useState('');
   const [comment, setComment] = useState("");
   const { slug } = useParams();
- const navigate=useNavigate();
+//  const navigate=useNavigate();
   const [likePost, setLikePost] = useState("");
   const [showModal,setShowModal]=useState(false);
 
@@ -36,7 +36,7 @@ const EachBlogPost = () => {
       setDatas({ ...res })
     }
     getData();
-  }, [likePost, comment]);
+  }, [likePost, comment, eachPostApi]);
 
 
 

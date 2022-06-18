@@ -15,7 +15,7 @@ const CreateBlogs = () => {
         if(!localStorage.getItem("token")){
             navigate("/login")
         }
-    },[])
+    },[navigate])
    
     const URL = "https://digitalmuseum.herokuapp.com/blogs/";
     const [formData, setFormData] = useState({
