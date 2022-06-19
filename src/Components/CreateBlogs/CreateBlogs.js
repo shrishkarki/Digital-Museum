@@ -17,7 +17,7 @@ const CreateBlogs = () => {
         }
     },[navigate])
    
-    const URL = "https://digitalmuseum.herokuapp.com/blogs/";
+    const URL = "https://api.yatharup.com/blogs/";
     const [formData, setFormData] = useState({
         title: "",
         category: "",
@@ -49,26 +49,28 @@ const CreateBlogs = () => {
     const imageHandler = (e) => {
         setImages(e.target.files)
     }
-console.log(images);
+
 
 
 
     const submitHandler = (e) => {
         e.preventDefault();
-        let fd = new FormData();
+        var fd = new FormData();
+        // fd.set('results',JSON.stringify( formData))
+        // console.log(fd);
         fd.append('title', formData.title)
         fd.append('category', formData.category)
         fd.append('body', formData.body)
+        console.log(fd)
 
         for (var x = 0; x < images.length; x++) {
             fd.append('images', images[x])
         }
+       
+       
         axios({
             url: URL,
             method: 'POST',
-            // headers: {
-            //     authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg1NTQ5NzExLCJpYXQiOjE2NTQwMTM3MTEsImp0aSI6ImYwZjk3MjQ1N2I4MDQ0Njg5ZTlkM2Q0ZDQ4MjEzZWE2IiwidXNlcl9pZCI6MX0.XiHcrtaS0eFXkNV7OLaVAZrpDyX7ey4ikxYnfN_4x0g"
-            // },
             headers:authHeader(),
             data: fd
         }).then(res => {

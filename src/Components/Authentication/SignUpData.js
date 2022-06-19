@@ -39,6 +39,8 @@ const SignUpData = () => {
         fd.append("password",formInput.password);
         fd.append("phone",formInput.phonenumber);
         // fd.append("address",formInput.address);
+
+        console.log(fd);
         
 
         axios({
