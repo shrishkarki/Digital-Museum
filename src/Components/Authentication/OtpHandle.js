@@ -14,7 +14,7 @@ fd.append("otp",otp);
 console.log(fd);
 
 axios({
-  url:"https://api.yatharup.com/accounts/verify-otp/",
+  url:"https://api.yatharup.com/accounts/verify-register-otp/",
   method:"POST",
 //   headers: {
 //     authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg1NTQ5NzExLCJpYXQiOjE2NTQwMTM3MTEsImp0aSI6ImYwZjk3MjQ1N2I4MDQ0Njg5ZTlkM2Q0ZDQ4MjEzZWE2IiwidXNlcl9pZCI6MX0.XiHcrtaS0eFXkNV7OLaVAZrpDyX7ey4ikxYnfN_4x0g"

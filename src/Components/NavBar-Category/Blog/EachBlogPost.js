@@ -27,7 +27,7 @@ const EachBlogPost = () => {
 
   // gettting each details
   const eachPostApi = axios.create({
-    baseURL: `https://digitalmuseum.herokuapp.com/blogs/b/${slug}/`
+    baseURL: `https://api.yatharup.comm/blogs/b/${slug}/`
   })
   useEffect(() => {
 
@@ -50,7 +50,7 @@ const EachBlogPost = () => {
       return false;
     }
 
-    const URLs = `https://digitalmuseum.herokuapp.com/blogs/b/${slug}/like/`
+    const URLs = `https://api.yatharup.com/blogs/b/${slug}/like/`
     axios({
       url: URLs,
       method: 'POST',
@@ -71,7 +71,7 @@ const EachBlogPost = () => {
 
   // posting comment
 
-  const URL = `https://digitalmuseum.herokuapp.com/blogs/b/${slug}/comment/`;
+  const URL = `https://api.yatharup.com/blogs/b/${slug}/comment/`;
   const commentSubmitHandler = (e) => {
     e.preventDefault();
     if(!localStorage.getItem("token")){

@@ -7,7 +7,7 @@ export const usePosts = () => {
    
     const dummyApi=axios.create({
      
-      baseURL:"https://digitalmuseum.herokuapp.com/blogs/"
+      baseURL:"https://api.yatharup.com/blogs/"
      
     })
 
@@ -33,7 +33,7 @@ export const useCategory = () => {
  
   const categoryApi=axios.create({
    
-     baseURL:"https://digitalmuseum.herokuapp.com/blogs/categories"
+     baseURL:"https://api.yatharup.com/blogs/categories"
   })
 
   useEffect(()=>{
@@ -56,7 +56,7 @@ export const useTrippleData=(categoryParam)=>{
 
   const trippleDataApi=axios.create({
    
-    baseURL:`https://digitalmuseum.herokuapp.com/blogs?limit=3&category=${categoryParam}`
+    baseURL:`https://api.yatharup.com/blogs?limit=3&category=${categoryParam}`
  })
 
  useEffect(()=>{
