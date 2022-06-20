@@ -27,6 +27,6 @@ jobs:
         server: ftp.yatharup.com
         username:  demo@yatharup.com
         password: ${{ secrets.password }}
-         dangerous-clean-slate: true
+        dangerous-clean-slate: true
         local-dir: ./build/
        
