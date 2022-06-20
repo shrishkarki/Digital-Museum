@@ -25,6 +25,8 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
         server: ftp.yatharup.com
-        username: production@yatharup.com
+        username:  demo@yatharup.com
         password: ${{ secrets.password }}
+         dangerous-clean-slate: true
+        local-dir: ./build/
        
