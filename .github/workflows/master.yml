@@ -24,7 +24,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: ${{ secrets.servername }}
-        username: ${{ secrets.username }}
+        server: ftp.yatharup.com
+        username: production@yatharup.com
         password: ${{ secrets.password }}
-        server-dir: /public_html/production.yatharup.com
+       
