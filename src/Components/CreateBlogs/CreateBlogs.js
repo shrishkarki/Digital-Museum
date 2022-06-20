@@ -77,9 +77,8 @@ const CreateBlogs = () => {
             console.log(res.data)
         }).catch((err)=>{
 
-            // {err.message && console.log(err.message)}
-            // {err.request && console.log(err.request)}
-            {err.response && console.log(err.response.data)}
+            
+            // {err.response && console.log(err.response.data)}
         })
 
         setFormData({
