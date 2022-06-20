@@ -1,7 +1,7 @@
 import React from 'react'
-import Slider from './Slider';
+// import Slider from './Slider';
 import LatestBlog from './LatestBlog';
-import SliderContainer from './SliderContainer';
+// import SliderContainer from './SliderContainer';
 import Header from './Section';
 
 const Home = () => {

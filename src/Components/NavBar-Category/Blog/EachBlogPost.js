@@ -10,7 +10,7 @@ import RecentPost from './RecentPost';
 import { FaRegCommentDots } from "react-icons/fa";
 import axios from 'axios';
 import authHeader from '../../SharedComponent/AuthHeader';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import ModalLoginPopup from '../../SharedComponent/ModalLoginPopup';
 
 
@@ -20,7 +20,7 @@ const EachBlogPost = () => {
   const [datas, setDatas] = useState('');
   const [comment, setComment] = useState("");
   const { slug } = useParams();
- const navigate=useNavigate();
+//  const navigate=useNavigate();
   const [likePost, setLikePost] = useState("");
   const [showModal,setShowModal]=useState(false);
 

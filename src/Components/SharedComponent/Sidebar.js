@@ -1,5 +1,5 @@
 import React from 'react';
-import LumbiniImage from '../../assets/pic1.jpg'
+// import LumbiniImage from '../../assets/pic1.jpg'
 
 const Sidebar = () => {
   return (
