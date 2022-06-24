@@ -12,6 +12,8 @@ import axios from 'axios';
 import authHeader from '../../SharedComponent/AuthHeader';
 // import { useNavigate } from 'react-router-dom';
 import ModalLoginPopup from '../../SharedComponent/ModalLoginPopup';
+import moment from 'moment';
+import { data } from 'autoprefixer';
 
 
 
@@ -27,7 +29,7 @@ const EachBlogPost = () => {
 
   // gettting each details
   const eachPostApi = axios.create({
-    baseURL: `https://api.yatharup.comm/blogs/b/${slug}/`
+    baseURL: `https://api.yatharup.com/blogs/b/${slug}/`
   })
   useEffect(() => {
 
@@ -95,16 +97,19 @@ const EachBlogPost = () => {
   }
 
 
+if(datas.data){
+  let check=moment(datas.data.pub_date,'YYYY/MM/DD');
+  var date=check.format('D');
+  var month=check.format("MMMM");
+  var year=check.format("YYYY");
 
-
-
-  let date = 23;
-  let month = "OCT";
-  let year = "2016";
+}
+  
+ 
   return (
     <>
       {datas.data && <div className='shadow-2xl'>
-
+    
 
         <Container image={EachImage} title={datas.data.title} />
         <div className='flex flex-col tmd:flex-row gap-7 md:gap-10 lg:gap-20 ml-5  mt-3'>

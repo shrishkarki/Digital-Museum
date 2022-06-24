@@ -4,7 +4,7 @@ import SignUpData from './SignUpData';
 
 const SignUp = () => {
   return (
-    <div className='flex'>
+    <div className='flex flex-col md:flex-row'>
         <Sidebar/>
         <SignUpData/>
     </div>

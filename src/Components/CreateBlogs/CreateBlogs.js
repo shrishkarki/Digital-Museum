@@ -77,7 +77,7 @@ const CreateBlogs = () => {
             console.log(res.data)
         }).catch((err)=>{
 
-            
+            console.log(err.response.data)
             // {err.response && console.log(err.response.data)}
         })
 

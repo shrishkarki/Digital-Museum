@@ -1,13 +1,20 @@
 import pic1 from "../../../assets/pic1.jpg";
 import pic2 from "../../../assets/kudan1.jpg";
 import pic3 from "../../../assets/Tilaurakot1.jpg";
+// import bgPic from "../../../assets/ShrishPro.png";
+import { useNavigate } from "react-router-dom";
 const Header = () => {
+
+  const navigate=useNavigate();
+
   // const [menu, setMenu] = useState(false);
   return (
     <div>
       <section>
         <div className="w-full relative " >
           <img className="absolute w-full inset-0 h-full object-cover object-center" src="https://cdn.tuk.dev/assets/templates/weCare/hero2-bg.png" alt="we care family" />
+
+          {/* <img className="absolute w-full inset-0 h-full object-cover object-center" src={bgPic} alt="section"/> */}
           
           <div className=" flex lg:flex-row flex-col relative items-center  z-10 ">
             <div className="w-full lg:w-1/2 h-[70vh] tm:min-h-[85vh]  relative md:container md:mx-auto ">
@@ -28,7 +35,7 @@ const Header = () => {
                 <div className="sm:flex  justify-center" >
 
 
-                  <button  aria-label="search" className="focus:bg-amber-700 focus:ring-amber-700 focus:ring-2 focus:ring-offset-2 text-white bg-amber-600 hover:bg-amber-700 mt-4 sm:mt-0 p-3 lg:-ml-8 rounded w-full sm:w-auto relative text-lg lg:text-xl">
+                  <button  aria-label="search" className="focus:bg-amber-700 focus:ring-amber-700 focus:ring-2 focus:ring-offset-2 text-white bg-amber-600 hover:bg-amber-700 mt-4 sm:mt-0 p-3 lg:-ml-8 rounded w-full sm:w-auto relative text-lg lg:text-xl" onClick={()=>navigate("./createnewblog")}>
                     Create a new blog
                   </button>
                
