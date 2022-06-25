@@ -17,7 +17,15 @@ const Navbar = () => {
 
       <div className='flex flex-col md:absolute md:left-52 lg:left-60  xl:left-80' >
           <div className='nav-top  lg:w-[776px] xl:w-[900px] h-8 bg-stone-800  hidden md:flex justify-end md:pr-[45px] lg:pr-[68px] xl:pr-[80px]'>
-              <div className='nav-inner w-[200px] h-8 bg-amber-500 ' ></div>
+
+            <div className='text-white w-full flex justify-center'>
+              <button>Login</button>
+
+              <button className='ml-10'>SignUp</button>
+            </div>
+              <div className='nav-inner w-[200px] h-8 bg-amber-500 ' >
+                {/* <button>Get Started -></button> */}
+              </div>
                 
           </div>
           <div className='md:pl-[115px] lg:pl-52  xl:pl-40 '>

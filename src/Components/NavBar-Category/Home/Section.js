@@ -1,7 +1,7 @@
 import pic1 from "../../../assets/pic1.jpg";
 import pic2 from "../../../assets/kudan1.jpg";
 import pic3 from "../../../assets/Tilaurakot1.jpg";
-// import bgPic from "../../../assets/ShrishPro.png";
+import bgPic from "../../../assets/shrishdai.png";
 import { useNavigate } from "react-router-dom";
 const Header = () => {
 
