@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import logo from './logo.png'
+import { CgLogIn } from 'react-icons/cg';
+import { IndexContext } from '../ContextAPi/IndexContext';
 
 
 
 
 const Navlinks = () => {
     const [nav, setNav] = useState(true);
+    const {token,setToken}=useContext(IndexContext);
+    const navigate=useNavigate();
 
     const handleNav = () => {
         setNav(!nav)
@@ -34,11 +38,16 @@ const Navlinks = () => {
                     </div>
                      
                     <ul className='bg-gradient-to-r from-amber-500 to-slate-500 h-full text-white text-xl text-justify pl-10 pt-4'>
-                        <li className='pb-10' ><Link to="/">HOME</Link></li>
-                        <li className='pb-10'><Link to="/gallery">GALLERY</Link></li>
-                        <li className='pb-10'><Link to="/blog">BLOG</Link></li>
-                        <li className='pb-10'><Link to="/contactUs">CONTACT US</Link></li>
-                        <li className='pb-10'><Link to="/aboutUs">ABOUT US</Link></li>
+                        <li className='pb-10' ><Link to="/" onClick={()=>setNav(!nav)}>HOME</Link></li>
+                        <li className='pb-10'><Link to="/gallery" onClick={()=>setNav(!nav)}>GALLERY</Link></li>
+                        <li className='pb-10'><Link to="/gallery" onClick={()=>setNav(!nav)}>GALLERY</Link></li>
+                        <li className='pb-10'><Link to="/blog" onClick={()=>setNav(!nav)}>BLOG</Link></li>
+                        <li className='pb-10'><Link to="/contactUs" onClick={()=>setNav(!nav)}>CONTACT US</Link></li>
+                        <li className='pb-10'><Link to="/aboutUs" onClick={()=>setNav(!nav)}>ABOUT US</Link></li>
+                       { !token ? <li className='pb-10'><Link to="Login" onClick={()=>setNav(!nav)}>LOGIN  <CgLogIn className='inline-block  text-white text-xl '/></Link> </li>:
+                       <li className='pb-10'><Link to="/" onClick={ ()=>{ setToken(localStorage.removeItem("token"))}}>LOGOUT  <CgLogIn className='inline-block  text-white text-xl '/></Link> </li>
+                       }
+
                     </ul>
                 </div>
 

@@ -102,13 +102,15 @@ export default function SlideCategory({path}) {
     <Slider ref={setSliderRef} {...sliderSettings} className="px-6 xxl:px-10 bg-gradient-to-r from-amber-500 
                      to-slate-600" >
       
-   {/* <p className='text-white py-3 text-center'><Link to={`/${path}/All`}>All</Link></p> */}
+ 
+
+<p className='text-white py-3 text-center'><Link to={`/${path}/All`}>All</Link></p>
       
-    {categoriesList && categoriesList.map(list=>{
-        return <div key={list.id} className='text-center hover:bg-[#f5b453] '>
-          <p className=' text-white py-3 '><Link to={`/${path}/${list.name}`}>{list.name}</Link></p>
-          </div>
-      })}
+      {categoriesList && categoriesList.map(list=>{
+          return <div key={list.id} className='text-center hover:bg-[#f5b453] '>
+            <p className=' text-white py-3 '><Link to={`/${path}/${list.name}`}>{list.name}</Link></p>
+            </div>
+        })}
       </Slider>
   </div>)
   )

@@ -6,7 +6,13 @@ const Login = () => {
   return (
     <div className='flex flex-col md:flex-row'>
         <Sidebar/>
+
+
+        <div className='flex w-full md:w-1/2 justify-center'>
         <LoginData/>
+
+        </div>
+        
     </div>
   )
 }
