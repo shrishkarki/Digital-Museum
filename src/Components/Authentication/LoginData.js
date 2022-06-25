@@ -48,34 +48,29 @@ setVisibility("visible")
    
   }
   return (
-    <form className='w-full md:w-1/2 flex flex-col justify-center items-center bg-white' onSubmit={submitLoginHandler}>
-        <div className='my-12 w-2/3 lg:w-1/2'>
-        <h3 className='text-amber-600 text-3xl tracking-[4px] font-extrabold w-full text-center'>WELCOME !</h3>
-
-       
-           <p className={`text-red-600 py-2 ${visibility} text-clip` }>{errorAuthorized.detail}</p>
-
-       
-        <div className='block my-3'>
+    <form className='W-1/2 flex flex-col  items-center ' onSubmit={submitLoginHandler}>
+    <div className='mt-12'>
+    <h3 className='text-amber-600 text-3xl tracking-[4px] font-extrabold w-full text-center'>WELCOME !</h3>
+    <div className='block my-3'>
+    
+        <label htmlFor='email'>Email:</label>
+        <input id='email' type="email" className='border-2 mt-1 block w-[300px] h-10 rounded-md focus:outline-amber-300' onChange={(e)=>updateInputHandler(e)}/>
         
-            <label htmlFor='email'>Email:</label>
-            <input id='email' type="email" className='border-2 mt-1 block w-full h-10 rounded-md focus:outline-amber-300' onChange={(e)=>updateInputHandler(e)} onFocus={()=>setErrorAuthorized("")} required/>
-            
-        </div>
+    </div>
 
-        <div className='block my-3'>
+    <div className='block my-3'>
+    
+        <label htmlFor='password'>Password:</label>
+        <input id='password' type="password" className='border-2 mt-1 block w-[300px] h-10 rounded-md focus:outline-amber-300' onChange={(e)=>updateInputHandler(e)}/>
         
-            <label htmlFor='password'>Password:</label>
-            <input id='password' type="password" className='border-2 mt-1 block w-full h-10 rounded-md focus:outline-amber-300' onChange={(e)=>updateInputHandler(e)} required/>
-            
-        </div>
-       
+    </div>
+   
 
-        <p className='flex justify-end underline text-amber-400 cursor-pointer'>Forget Password?</p>
-        <button type='submit' className='w-full bg-amber-500 mt-2 text-white rounded-md text-2xl py-1'>Login</button>
-        <p className='mt-3 text-center'>Don't have an account? <span className='text-amber-400 cursor-pointer' onClick={()=>navigate("/SignUp")}>Sign Up</span></p>
-        </div>
-    </form>
+    <p className='flex justify-end underline text-amber-400 cursor-pointer'>Forget Password?</p>
+    <button type='submit' className='w-full bg-amber-500 mt-2 text-white rounded-md text-2xl py-1'>Login</button>
+    <p className='mt-3 text-center'>Don't have an account? <span className='text-amber-400 cursor-pointer' onClick={()=>navigate("/SignUp")}>Sign Up</span></p>
+    </div>
+</form>
   )
 }
 
