@@ -11,6 +11,8 @@ export default function SlideCategory({path}) {
   const [sliderRef, setSliderRef] = useState(null);
   const categoriesList=useCategory();
 
+  // console.log(categoriesList)
+
   const sliderSettings = {
     arrows: false,
     dots:false,
@@ -70,25 +72,25 @@ export default function SlideCategory({path}) {
     
   }
 
-  const navs=[
-    {id:"1",navName:"All"},
-    {id:"2",navName:"Personal"},
+  // const navs=[
+  //   {id:"1",navName:"All"},
+  //   {id:"2",navName:"Personal"},
     
-    {id:"3",navName:"Biography"},
-    {id:"4",navName:"Nature"},
-    {id:"5",navName:"Archelogy"},
-    {id:"6",navName:"History"},
-    {id:"7",navName:"Science"},
-    {id:"8",navName:"Art & craft"},
-    {id:"9",navName:"Aviation"},
-    {id:"10",navName:"Agriculture"},
-    {id:"11",navName:"Eco-Museum"},
-    {id:"12",navName:"Botanical"},
-    {id:"12",navName:"Zoology"}
-  ]
+  //   {id:"3",navName:"Biography"},
+  //   {id:"4",navName:"Nature"},
+  //   {id:"5",navName:"Archelogy"},
+  //   {id:"6",navName:"History"},
+  //   {id:"7",navName:"Science"},
+  //   {id:"8",navName:"Art & craft"},
+  //   {id:"9",navName:"Aviation"},
+  //   {id:"10",navName:"Agriculture"},
+  //   {id:"11",navName:"Eco-Museum"},
+  //   {id:"12",navName:"Botanical"},
+  //   {id:"12",navName:"Zoology"}
+  // ]
 
   return (
-    <div className='content relative'>
+    (categoriesList && <div className='content relative'>
     <div className='controls'>
       <button onClick={sliderRef?.slickPrev} className="  absolute top-[26%] z-10 border-2 rounded-full p-[2px] md:p-1 hover:">
         <FaChevronLeft />
@@ -100,7 +102,7 @@ export default function SlideCategory({path}) {
     <Slider ref={setSliderRef} {...sliderSettings} className="px-6 xxl:px-10 bg-gradient-to-r from-amber-500 
                      to-slate-600" >
       
-   <p className='text-white py-3 text-center'><Link to={`/${path}/All`}>All</Link></p>
+   {/* <p className='text-white py-3 text-center'><Link to={`/${path}/All`}>All</Link></p> */}
       
     {categoriesList && categoriesList.map(list=>{
         return <div key={list.id} className='text-center hover:bg-[#f5b453] '>
@@ -108,6 +110,6 @@ export default function SlideCategory({path}) {
           </div>
       })}
       </Slider>
-  </div>
+  </div>)
   )
 }

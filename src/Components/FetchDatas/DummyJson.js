@@ -58,7 +58,7 @@ export const useTrippleData=(categoryParam)=>{
    
     baseURL:`https://api.yatharup.com/blogs?limit=3&category=${categoryParam}`
  })
-
+   
  useEffect(()=>{
    const getData=async()=>{
     const res= await trippleDataApi.get();

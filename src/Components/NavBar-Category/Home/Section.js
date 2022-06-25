@@ -12,12 +12,13 @@ const Header = () => {
     <div>
       <section>
         <div className="w-full relative " >
-          <img className="absolute w-full inset-0 h-full object-cover object-center" src="https://cdn.tuk.dev/assets/templates/weCare/hero2-bg.png" alt="we care family" />
+          <img className="absolute w-full inset-0 h-full  object-cover object-center  " src="https://cdn.tuk.dev/assets/templates/weCare/hero2-bg.png" alt="we care family" />
 
-          {/* <img className="absolute w-full inset-0 h-full object-cover object-center" src={bgPic} alt="section"/> */}
-          
+          {/* <img className="absolute w-full inset-0 h-full " src={bgPic} alt="section"/>
+           */}
           <div className=" flex lg:flex-row flex-col relative items-center  z-10 ">
-            <div className="w-full lg:w-1/2 h-[70vh] tm:min-h-[85vh]  relative md:container md:mx-auto ">
+            {/* <div className="w-full lg:w-1/2 h-[70vh] tm:min-h-[85vh]  relative md:container md:mx-auto "> */}
+            <div className="w-full lg:w-1/2   h-[440px] md:h-[460px]   xl:h-[550px]">
               {/* <img tabIndex="0" role="img" aria-label="people smiling" className="mx-auto" src="https://cdn.tuk.dev/assets/templates/weCare/hero2-left.png" alt="people smiling" /> */}
               <img  className="absolute right-0 top-[120px] tmd:top-28 tmd:left-32 xl:left-40 w-[280px] h-[220px] tm:w-[370px] tm:h-[270px] tmd:w-[370px] tmd:h-[280px] lg:w-[320px] lg:h-[230px]    xl:w-[350px] xl:h-[260px] z-50 rounded-xl transition-all ease-in-out duration-500 hover:z-[200] hover:scale-105" src={pic1} alt="people smiling" />
 

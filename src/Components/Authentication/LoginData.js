@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
+import { IndexContext } from '../ContextAPi/IndexContext';
 
 
 const LoginData = () => {
   const navigate=useNavigate();
   const [errorAuthorized,setErrorAuthorized]=useState("");
   const [visibility, setVisibility]=useState("invisible");
+const {setToken}=useContext(IndexContext);
   const [inputData,setInputData]=useState({
 
   email:"",password:""})
@@ -34,6 +36,8 @@ const LoginData = () => {
   }).then(res => {
       console.log(res.data)
      localStorage.setItem("token",res.data.access);
+     setToken(localStorage.getItem("token"));
+     
      navigate("/")
   }).catch(err=>{
 console.log(err.response.data)
