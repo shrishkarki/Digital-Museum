@@ -48,7 +48,7 @@ setVisibility("visible")
    
   }
   return (
-    <form className='w-full md:w-1/2 flex flex-col justify-center items-center ' onSubmit={submitLoginHandler}>
+    <form className='w-full md:w-1/2 flex flex-col justify-center items-center bg-white' onSubmit={submitLoginHandler}>
         <div className='my-12 w-2/3 lg:w-1/2'>
         <h3 className='text-amber-600 text-3xl tracking-[4px] font-extrabold w-full text-center'>WELCOME !</h3>
 

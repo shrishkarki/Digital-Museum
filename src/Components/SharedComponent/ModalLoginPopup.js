@@ -9,16 +9,16 @@ const ModalLoginPopup = ({ close }) => {
 
 
       </div>
-      <div className=' fixed top-0 left-0 right-0 z-50  w-full flex justify-center'>
-        
-        <div className='relative flex justify-center w-full rounded-xl relative'>
-          <div className='bg-white'>
-          <LoginData />
+      <div className='fixed top-0  z-50  w-full  '>
 
-<button className='text-black absolute top-0 right-0' onClick={() => close(false)}>Close </button>
-          </div>
-         
-        </div>
+
+
+        <LoginData />
+
+        <button className='text-black absolute top-0 right-0' onClick={() => close(false)}>Close </button>
+
+
+
 
       </div>
     </>
