@@ -92,15 +92,19 @@ const SignUpData = () => {
 
 
                     <label htmlFor='email'>Email:</label>
-                    <input id='email' type="email" className='border-2 mt-1 block w-full  h-10 rounded-md focus:outline-amber-300' onChange={(e) => handlingInputHandler(e)} required onFocus={()=>setAlreadyExistInfo({ existEmail: "",
-        existUsername: ""})}/>
+                    <input id='email' type="email" className='border-2 mt-1 block w-full  h-10 rounded-md focus:outline-amber-300' onChange={(e) => handlingInputHandler(e)} required onFocus={() => setAlreadyExistInfo({
+                        existEmail: "",
+                        existUsername: ""
+                    })} />
 
                 </div>
                 <div className='block my-3'>
 
                     <label htmlFor='username'>Username:</label>
-                    <input id='username' type="text" className='border-2 mt-1 block w-full  h-10 rounded-md focus:outline-amber-300' autoComplete='false' onChange={(e) => handlingInputHandler(e)} required onFocus={()=>setAlreadyExistInfo({ existEmail: "",
-        existUsername: ""})}/>
+                    <input id='username' type="text" className='border-2 mt-1 block w-full  h-10 rounded-md focus:outline-amber-300' autoComplete='false' onChange={(e) => handlingInputHandler(e)} required onFocus={() => setAlreadyExistInfo({
+                        existEmail: "",
+                        existUsername: ""
+                    })} />
 
                 </div>
 
@@ -112,18 +116,20 @@ const SignUpData = () => {
                 </div>
 
 
-                <div className='block my-3'>
 
-                    <label htmlFor='password'>Password:</label>
+                <label htmlFor='password'>Create Password:</label>
+                <div className='block my-3'>
                     <input id='password' type="password" className='border-2 mt-1 block w-full  h-10 rounded-md focus:outline-amber-300' onChange={(e) => handlingInputHandler(e)} required />
 
                 </div>
-                {/* <div className='block my-3'>
+
+
+                <div className='block my-3'>
 
                     <label htmlFor='address'>Address:</label>
                     <input id='address' type="text" className='border-2 mt-1 block w-full  h-10 rounded-md focus:outline-amber-300' onChange={(e) => handlingInputHandler(e)} required />
 
-                </div> */}
+                </div>
                 <div className='block my-3'>
 
                     <label htmlFor='phonenumber'>Mobile Number:</label>
