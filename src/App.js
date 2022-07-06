@@ -15,6 +15,7 @@ import Login from './Components/Authentication/Login';
 import SignUp from './Components/Authentication/SignUp';
 import OtpHandle from './Components/Authentication/OtpHandle';
 import Error10 from './Components/ErrorPage/ErrorPage';
+import ResetPassword from './Components/Authentication/resetPassword';
 
 // import { usePosts } from "./Components/FetchDatas/DummyJson";
 
@@ -75,6 +76,7 @@ function App() {
           <Route path='Login' element={<Login/>}/>
           <Route path='SignUp' element={<SignUp/>}/>
           <Route path='SignUp/Verify-OTP'  element={<OtpHandle/>}/>
+          <Route path='resetpassword' element={<ResetPassword/>}/>
           <Route path='*' element={<Error10/>}/>
 
         </Routes>

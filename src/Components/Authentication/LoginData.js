@@ -5,6 +5,7 @@ import { IndexContext } from '../ContextAPi/IndexContext';
 // import { BiHide, BiShow } from 'react-icons/bi';
 import showPassword from '../../assets/showpw.svg';
 import hidePassword from '../../assets/hidepw.svg';
+import { Link } from 'react-router-dom';
 
 
 const LoginData = () => {
@@ -86,7 +87,7 @@ setVisibility("visible")
     </div>
    
 
-    <p className='flex justify-end underline text-amber-400 cursor-pointer'>Forget Password?</p>
+    <p className='flex justify-end underline text-amber-400 cursor-pointer'><Link to="/resetpassword">Forget Password?</Link> </p>
     <button type='submit' className='w-full bg-amber-500 mt-2 text-white rounded-md text-2xl py-1'>Login</button>
     <p className='mt-3 text-center'>Don't have an account? <span className='text-amber-400 cursor-pointer' onClick={()=>navigate("/SignUp")}>Sign Up</span></p>
     </div>
