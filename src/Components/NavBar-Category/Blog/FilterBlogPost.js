@@ -55,21 +55,21 @@ console.log(datas)
             {datas && console.log(datas)}
            <div className='flex w-full lg:w-2/3 flex-wrap pl-4 tm:pl-0 tm:mx-3 lg:mx-0  gap-2 xl:gap-8 lg:ml-5'>{inputText? blogSearchFilter.map(data=>{
               let check=moment(data.pub_date,'YYYY/MM/DD');
-              let date=check.format('DDD');
+              let date=check.format('D');
               let month=check.format("MMMM");
               let year=check.format("YYYY");
 
               const singleImage = [...data.images.slice(0, 1)]
              
                 return (
-                  <div key={data.id} className='w-[48%] duration-300 ease-in-out hover:scale-[1.04] border-t-4 border-amber-400  border-b-2  shadow-lg mb-3 h-[300px]' >
+                  <div key={data.id} className='w-[94%] tm:w-[48%] duration-300 ease-in-out hover:scale-[1.04] border-t-4 border-amber-400  border-b-2  shadow-lg mb-3 h-[330px] tm:h-[360px] tmd:h-[430px]' >
                   {/* <img src={data.image} alt={data.category} className="w-full"/> */}
-                  {singleImage.map(eachImage => (<img src={eachImage.image_url} alt={data.category} className="w-full h-[250px]"/>))}
+                  {singleImage.map(eachImage => (<img src={eachImage.image_url} alt={data.category} className="w-full h-[165px] tm:h-[180px] tmd:h-[230px] md:h-[250px] object-cover"/>))}
                   <div className='flex pl-3'>
                       <AiOutlineClockCircle fontSize={23}/> &nbsp;<span>{date}</span>
                       &nbsp;<span>{month}</span>  &nbsp;<span>{year}</span>
                     </div>
-                  <h1 className='text-3xl font-extrabold truncate pl-3'>{data.title}</h1>
+                  <h1 className='text-xl md:text-2xl xl:text-3xl font-extrabold truncate pl-3 capitalize'>{data.title}</h1>
                   <span className='font-bold text-gray-400 pl-3'>@{data.author}   / </span><span className='font-bold  text-amber-500 '>{data.category}</span>
                   <p className='truncate pl-3'>{data.body}</p>
 
