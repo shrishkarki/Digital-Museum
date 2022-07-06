@@ -71,25 +71,19 @@ export const useTrippleData=(categoryParam)=>{
 }
 
 
-// export const useEachBlogPost=(slugData)=>{
+export const useRecentPosts=()=>{
+  const [recentPosts , setRecentPosts]=useState("");
+   const recentPostApi=axios.create({
+    baseURL:"https://api.yatharup.com/blogs?limit=5"
+   })
 
-//   const [eachBlogPost,setEachBlogPost]=useState('');
-
-
-//   const eachPostApi=axios.create({
-//     baseURL:`https://digitalmuseum.herokuapp.com/blogs/b/${slugData}/`
-//   })
-
-//   useEffect(()=>{
-    
-//     const getData=async()=>{
-//       console.log("inside async await function")
-//       const res=await eachPostApi.get();
-//       setEachBlogPost(res)
-
-//     }
-//     getData();
-//   },[])
-// return eachBlogPost;
-// }
+   useEffect(()=>{
+    const getData=async()=>{
+      const res= await recentPostApi.get();
+      setRecentPosts(res.data);
+    }
+    getData();
+   },[])
+   return recentPosts;
+}
 

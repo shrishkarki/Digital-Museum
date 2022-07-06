@@ -58,7 +58,7 @@ const EachCategoryLists = ({ eachCategory }) => {
 
 
                                     <div className='flex pl-2 gap-7 tm:gap-3 md:gap-4 lg:gap-7 md:text-sm  lg:text-lg'>
-                                        <div className='flex gap-1 text-gray-400'>
+                                        <div className='flex gap-1 text-gray-400 pb-3'>
                                             <FaRegCommentDots size={24} />
                                             <span className='cursor-pointer'>{item.comment_count} Comments</span>
                                         </div>

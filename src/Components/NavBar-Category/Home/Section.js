@@ -1,7 +1,7 @@
 import pic1 from "../../../assets/pic1.jpg";
 import pic2 from "../../../assets/kudan1.jpg";
 import pic3 from "../../../assets/Tilaurakot1.jpg";
-import bgPic from "../../../assets/shrishdai.png";
+// import bgPic from "../../../assets/shrishdai.png";
 import { useNavigate } from "react-router-dom";
 const Header = () => {
 
@@ -47,26 +47,7 @@ const Header = () => {
         </div>
       </section>
 
-      <style>
-        {`
-            /* Top menu */
-            .top-100 {
-                animation: slideDown 0.5s ease-in-out;
-            }
-            @keyframes slideDown {
-                0% {
-                    top: -50%;
-                }
-                100% {
-                    top: 0;
-                }
-            }
-            * {
-                outline: none !important;
-                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-                -webkit-tap-highlight-color: transparent;
-            }`}
-      </style>
+      
     </div>
   );
 };

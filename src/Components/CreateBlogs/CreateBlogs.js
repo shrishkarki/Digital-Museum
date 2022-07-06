@@ -44,8 +44,6 @@ const CreateBlogs = () => {
     const submitHandler = (e) => {
         e.preventDefault();
         var fd = new FormData();
-        // fd.set('results',JSON.stringify( formData))
-        // console.log(fd);
         fd.append('title', formData.title)
         fd.append('category', formData.category)
         fd.append('body', formData.body)
@@ -67,7 +65,7 @@ const CreateBlogs = () => {
         }).catch((err)=>{
 
             console.log(err.response.data)
-            // {err.response && console.log(err.response.data)}
+           
         })
 
         setFormData({

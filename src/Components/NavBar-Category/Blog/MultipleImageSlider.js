@@ -33,7 +33,7 @@ export default function MultipleImageSlider({imageList}) {
       
     {imageList && imageList.map((list,index)=>{
         return <div key={index} className='text-center '>
-          <img src={list.image_url} alt="images" className='w-full h-[280px] tmd:h-[250px] lg:h-96 '/>
+          <img src={list.image_url} alt="images" className='w-full h-[200px] tmd:h-[250px] lg:h-96 object-fill '/>
           </div>
       })}
       </Slider>

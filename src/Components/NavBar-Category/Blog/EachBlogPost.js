@@ -13,7 +13,7 @@ import authHeader from '../../SharedComponent/AuthHeader';
 // import { useNavigate } from 'react-router-dom';
 import ModalLoginPopup from '../../SharedComponent/ModalLoginPopup';
 import moment from 'moment';
-import { data } from 'autoprefixer';
+
 
 
 
@@ -38,7 +38,7 @@ const EachBlogPost = () => {
       setDatas({ ...res })
     }
     getData();
-  }, [likePost, comment]);
+  }, [likePost,comment,slug]);
 
 
 
@@ -112,7 +112,7 @@ if(datas.data){
     
 
         <Container image={EachImage} title={datas.data.title} />
-        <div className='flex flex-col tmd:flex-row gap-7 md:gap-10 lg:gap-20 ml-5  mt-3'>
+        <div className='flex flex-col tmd:flex-row gap-7 md:gap-10 lg:gap-20 ml-[10px]  mt-3'>
           <article key={datas.data.id} className=' w-[97%] tmd:w-[50%] md:w-[45%]'>
 
 
@@ -143,7 +143,7 @@ if(datas.data){
 
             {datas.data.comments && datas.data.comments.map(eachCom => {
               return (<div key={eachCom.id} className="flex mb-4">
-                <figure className='w-[40px] h-[40px] border-2 rounded-full border-red-400'>hello</figure>
+                <figure className='w-[40px] h-[40px] border-2 rounded-full border-red-400'></figure>
                 <div className='ml-3 pt-1'>
                   <p className='font-extrabold'>{eachCom.commented_by}</p>
                   <p>{eachCom.comment}</p>
@@ -159,9 +159,11 @@ if(datas.data){
 
             </form>
           </article>
-          <div className='w-[40%]'>
+          <div className=' pr-5 lg:pr-0'>
             <RecentPost />
           </div>
+
+         
 
         </div>
 

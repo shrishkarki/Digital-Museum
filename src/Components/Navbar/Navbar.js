@@ -32,10 +32,10 @@ const Navbar = () => {
 
           
               <div className='nav-inner w-[200px] h-8 bg-amber-500 ' >
-                {!token ? <div className='flex justify-center items-center  h-full w-full' onClick={()=>navigate("Login")}>
+                {!localStorage.getItem("token") ? <div className='flex justify-center items-center  h-full w-full' onClick={()=>navigate("Login")}>
                 <button className='font-bold text-xl tracking-[1.5px] text-white'>Login&nbsp;</button>
                 <CgLogIn className='text-white text-xl mt-1'/>
-                </div>:<div className='flex justify-center items-center  h-full w-full' onClick={()=>setToken(localStorage.removeItem("token"))}>
+                </div>:<div className='flex justify-center items-center  h-full w-full' onClick={()=>setToken(localStorage.removeItem("token") , window.location.reload())}>
                 <button className='font-bold text-xl tracking-[1.5px] text-white'>Logout&nbsp;</button>
                 <CgLogIn className='text-white text-xl mt-1'/>
                 </div>}

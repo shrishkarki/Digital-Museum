@@ -2,11 +2,16 @@ import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { IndexContext } from '../ContextAPi/IndexContext';
 import { useNavigate } from 'react-router-dom';
+import showPassword from '../../assets/showpw.svg';
+import hidePassword from '../../assets/hidepw.svg';
 
 const SignUpData = () => {
 
     const { setEmailAddress } = useContext(IndexContext);
     const navigate = useNavigate();
+
+    const [passwordShown, setPasswordShown] = useState(false);
+  const [focusState, setFocusState]=useState(false);
 
     // console.log(emailAddress);
 
@@ -16,7 +21,7 @@ const SignUpData = () => {
         email: "",
         password: "",
         phonenumber: "",
-        // address: ""
+        address: ""
 
     });
 
@@ -46,7 +51,7 @@ const SignUpData = () => {
         fd.append("email", formInput.email);
         fd.append("password", formInput.password);
         fd.append("phone", formInput.phonenumber);
-        // fd.append("address",formInput.address);
+        fd.append("address",formInput.address);
 
         console.log(fd);
 
@@ -118,10 +123,23 @@ const SignUpData = () => {
 
 
                 <label htmlFor='password'>Create Password:</label>
-                <div className='block my-3'>
-                    <input id='password' type="password" className='border-2 mt-1 block w-full  h-10 rounded-md focus:outline-amber-300' onChange={(e) => handlingInputHandler(e)} required />
+                <div className={`my-3 relative  border-2 mt-1 flex w-full h-10 rounded-md  ${focusState ? "border-amber-300":""} `}  >
+    
+        
+        {/* <input id='password' type={passwordShown? "text" : "password"} className='  border-2 mt-1 block w-[300px] h-10 rounded-md focus:outline-amber-300' onChange={(e)=>handlingInputHandler(e)}/> */}
+        <input id='password' type={passwordShown? "text" : "password"} className='block outline-none   border-none w-[250px] pl-2' onChange={(e)=>handlingInputHandler(e)} onFocus={()=>setFocusState(true)} onBlur={()=>setFocusState(false)}/>
 
-                </div>
+        {/* <div onClick={()=>setPasswordShown(!passwordShown)} className="absolute right-4 top-[60%]">
+        {passwordShown ? <BiHide/>:<BiShow/>}
+        </div> */}
+        <img
+         alt='img'
+          src={passwordShown ? hidePassword : showPassword}
+          onClick={()=>setPasswordShown(!passwordShown)}
+          className="absolute right-2 w-[20px] top-2"
+        />
+       
+    </div>
 
 
                 <div className='block my-3'>

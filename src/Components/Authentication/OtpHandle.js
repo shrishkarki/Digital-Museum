@@ -46,9 +46,9 @@ data: fd
 
    }
   return (
-    <div className='w-full h-[50vh] flex flex-col items-center justify-center text-lg'>
+    <div className='w-full h-[50vh] flex flex-col items-center justify-center text-lg text-center'>
 
-      <p>Please enter otp to verify your account</p>
+      <p >Please enter otp to verify your account</p>
       <p className='my-4'>An otp has sent to <span className='text-amber-500 font-bold '>{emailAddress}</span></p>
    
     <form onSubmit={submitOTPHandler} className="">

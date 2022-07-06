@@ -93,9 +93,9 @@ console.log(datas)
               let year=check.format("YYYY");
               const singleImage = [...data.images.slice(0, 1)]
               return (
-                  <div key={data.id} className='w-[94%] tm:w-[48%] duration-300 ease-in-out hover:scale-[1.04] border-t-4 border-amber-400  border-b-2  shadow-lg mb-3 h-[330px]  tmd:h-[430px]' >
+                  <div key={data.id} className='w-[94%] tm:w-[48%] duration-300 ease-in-out hover:scale-[1.04] border-t-4 border-amber-400  border-b-2  shadow-lg mb-3 h-[330px] tm:h-[360px] tmd:h-[430px]' >
                        {/* <img src={data.image} alt={data.category} className="w-full"/> */}
-                       {singleImage.map(eachImage => (<img src={eachImage.image_url} alt={data.category} className="w-full h-[165px] tm:h-[180px] tmd:h-[230px] md:h-[250px]"/>))}
+                       {singleImage.map(eachImage => (<img src={eachImage.image_url} alt={data.category} className="w-full h-[165px] tm:h-[180px] tmd:h-[230px] md:h-[250px] object-cover"/>))}
                        <div className='flex pl-3'>
                            <AiOutlineClockCircle fontSize={23}/> &nbsp;<span>{date}</span>
                            &nbsp;<span>{month}</span>  &nbsp;<span>{year}</span>
@@ -120,11 +120,16 @@ console.log(datas)
           })}
            </div>
 
-           <div className='flex flex-col w-[23%] '>
-             <label htmlFor="search">SEARCH</label>
+           <div className=' flex flex-col w-[100%]  tm:w-[65%] tmd:w-[60%]  lg:w-[23%] px-5 lg:px-0 '>
+            <div className='hidden lg:flex lg:flex-col'>
+            <label htmlFor="search" className='font-extrabold'>SEARCH</label>
              <div className='border-[1px] border-amber-400 w-full my-3'></div>
              <input type="text" id='search' placeholder='Search Blog' value={inputText} onChange={searchHandler} className="border-slate-500 outline"/>
-             <RecentPost/>
+            </div>
+            
+            <RecentPost/>
+
+            
            </div>
            
             
