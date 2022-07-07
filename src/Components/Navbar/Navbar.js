@@ -5,6 +5,7 @@ import Navlinks from './Navlinks';
 import { CgLogIn } from 'react-icons/cg';
 import { useNavigate } from 'react-router-dom';
 import { IndexContext } from '../ContextAPi/IndexContext';
+import UserProfile from './UserProfile';
 
 const Navbar = () => {
   const {token ,setToken}=useContext(IndexContext);
@@ -50,6 +51,8 @@ const Navbar = () => {
           </div>
       </div>
           
+
+
 
     </div>
   )

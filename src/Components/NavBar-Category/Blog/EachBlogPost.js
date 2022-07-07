@@ -143,7 +143,7 @@ if(datas.data){
 
             {datas.data.comments && datas.data.comments.map(eachCom => {
               return (<div key={eachCom.id} className="flex mb-4">
-                <figure className='w-[40px] h-[40px] border-2 rounded-full border-red-400'></figure>
+                <figure className='w-[40px] h-[40px] border-2 rounded-full border-amber-400'> <img src="https://demos.creative-tim.com/notus-js/assets/img/team-1-800x800.jpg" alt="..." class="shadow rounded-full max-w-full h-auto align-middle border-none" /></figure>
                 <div className='ml-3 pt-1'>
                   <p className='font-extrabold'>{eachCom.commented_by}</p>
                   <p>{eachCom.comment}</p>

@@ -4,11 +4,11 @@ const IndexContext=createContext();
 const IndexContextProvider = ({children}) => {
 
     const [emailAddress,setEmailAddress]=useState("");
-    const [token ,setToken]=useState("");
+    const [resetToken ,setResetToken]=useState("");
 
  
     return(
-        <IndexContext.Provider value={{emailAddress,setEmailAddress,token,setToken}}>
+        <IndexContext.Provider value={{emailAddress,setEmailAddress,resetToken,setResetToken}}>
             {children}
         </IndexContext.Provider>
     )
