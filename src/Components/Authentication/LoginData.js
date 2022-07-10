@@ -59,10 +59,10 @@ const LoginData = () => {
 
   }
   return (
-    <form className='w-1/2 flex flex-col  items-center py-10' onSubmit={submitLoginHandler}>
+    <form className=' flex flex-col  items-center justify-center py-10' onSubmit={submitLoginHandler}>
       <div className='mt-12'>
         <h3 className='text-amber-600 text-3xl tracking-[4px] font-extrabold w-full text-center'>WELCOME !</h3>
-        <p className={`text-red-600 pl-2 py-2 ${visibility} text-clip`}>{errorAuthorized.detail}</p>
+        <p className={`text-red-600 pl-2 py-2 h-3 ${visibility} text-clip`}>{errorAuthorized.detail}</p>
          {/* <p className={`text-red-600 pl-2  ${visibility} `}>{errorAuthorized.detail}</p> */}
         <div className='block my-3'>
 

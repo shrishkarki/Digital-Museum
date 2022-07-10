@@ -4,7 +4,7 @@ import LoginData from '../Authentication/LoginData';
 const ModalLoginPopup = ({ close }) => {
   return (
     <>
-       <div className='fixed top-0 left-0  bg-black opacity-50  h-full   z-40 w-full  flex justify-center'>
+       <div className='fixed top-0 left-0  bg-black opacity-50  h-full   z-40 w-full  flex  justify-center'>
 
 
 

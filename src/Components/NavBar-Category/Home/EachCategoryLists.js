@@ -36,7 +36,7 @@ const EachCategoryLists = ({ eachCategory }) => {
                         return (
                             <>
                                 <div className={` duration-300 ease-in-out hover:scale-[1.04] border-t-4 border-amber-400  border-b-2  shadow-lg w-full  tm:w-[47.5%] md:w-[32%] lg:w-[32%] xl:w-1/3 ${index === 2 ? 'hidden' : ''} md:block sm:mb-4`} key={index}>
-                                    {singleImage.map(eachImage => (<img src={eachImage.image_url} className='w-full sm:h-[180px]  lg:h-[270px] xl:h-[300px] ' alt={item.category} />))}
+                                    {singleImage.map(eachImage => (<img src={eachImage.image_url} className='w-full sm:h-[180px]  lg:h-[270px] xl:h-[300px] object-cover' alt={item.category} />))}
 
                                     <div className='flex  pl-2'>
                                         <div className='w-[80%]'>
