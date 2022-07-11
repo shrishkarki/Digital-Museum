@@ -14,7 +14,7 @@ import authHeader from '../../SharedComponent/AuthHeader';
 import ModalLoginPopup from '../../SharedComponent/ModalLoginPopup';
 import moment from 'moment';
 // import { FacebookShareButton } from 'react-share';
-import {FacebookIcon} from 'react-share';
+// import {FacebookIcon} from 'react-share';
 import { Helmet } from 'react-helmet';
 
 
