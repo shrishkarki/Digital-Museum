@@ -17,7 +17,7 @@ import OtpHandle from './Components/Authentication/OtpHandle';
 import Error10 from './Components/ErrorPage/ErrorPage';
 import ResetPassword from './Components/Authentication/ResetPassword';
 import SetNewPassword from './Components/Authentication/SetNewPassword';
-import { Helmet } from 'react-helmet';
+// import { Helmet } from 'react-helmet';
 
 // import { usePosts } from "./Components/FetchDatas/DummyJson";
 

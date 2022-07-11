@@ -13,8 +13,8 @@ import authHeader from '../../SharedComponent/AuthHeader';
 // import { useNavigate } from 'react-router-dom';
 import ModalLoginPopup from '../../SharedComponent/ModalLoginPopup';
 import moment from 'moment';
-// import { FacebookShareButton } from 'react-share';
-// import {FacebookIcon} from 'react-share';
+import { FacebookShareButton } from 'react-share';
+import {FacebookIcon} from 'react-share';
 import { Helmet } from 'react-helmet';
 
 
@@ -150,9 +150,11 @@ if(datas.data){
             <p>{datas.data.body}</p>
 
             <p>Share:
-              {/* <FacebookShareButton url='https://9021-103-181-227-138.in.ngrok.io/blog/Travel/why-do-we-use-it' quote="hello worldddd" hashtag='#donee'>
+              {/* <FacebookShareButton url='https://9021-103-181-227-138.in.ngrok.io/blog/Travel/why-do-we-use-it' quote="hello worldddd" hashtag='#donee'> */}
+               <FacebookShareButton url='https://www.demo.yatharup.com/blog/Travel/why-do-we-use-it' quote="hello worldddd" hashtag='#donee'>
+              
                 <FacebookIcon logoFillColor="white" round={true}></FacebookIcon>
-                </FacebookShareButton> */}
+                </FacebookShareButton>
             </p>
 
             <div className='flex gap-1 text-gray-500 mt-5 mb-3' >
