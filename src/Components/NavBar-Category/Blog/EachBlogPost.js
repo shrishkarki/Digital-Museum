@@ -118,6 +118,11 @@ if(datas.data){
   <title>{datas.data.title}</title>
   <meta name="description" content={datas.data.body}/>
 
+
+  <meta property="og:title" content={datas.data.title} />
+{/* <meta property="og:type" content="video.movie" /> */}
+{/* <meta property="og:url" content="https://www.imdb.com/title/tt0117500/" /> */}
+<meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" />
   
 </Helmet>
         <Container image={EachImage} title={datas.data.title} />
