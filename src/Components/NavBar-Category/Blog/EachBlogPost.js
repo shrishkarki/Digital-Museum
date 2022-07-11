@@ -120,8 +120,11 @@ if(datas.data){
 
 
   <meta property="og:title" content={datas.data.title} />
-{/* <meta property="og:type" content="video.movie" /> */}
-{/* <meta property="og:url" content="https://www.imdb.com/title/tt0117500/" /> */}
+  <meta property="og:description" content="२७ असार, काठमाडौं । राष्ट्रिय ट्रमा सेन्टरको आईसीयूमा ४२ दिनदेखि उपचाररत कञ्चनपुरका पुष्कर चौधरी (२७) कहिले घर फर्कन पाउलान् ? उत्तर कसैसँग थिएन ।
+
+कम्मरभन्दा तलको भाग नचल्ने पुष्कर, बोल्न पनि सक्दैनथे । ‘डाक्टरले लैजाउ भनेका …"></meta>
+<meta property="og:type" content="video.movie" />
+<meta property="og:url" content="https://www.demo.yatharup.com/blog/Travel/why-do-we-use-it" />
 <meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" />
   
 </Helmet>
