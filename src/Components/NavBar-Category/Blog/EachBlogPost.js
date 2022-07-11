@@ -123,7 +123,7 @@ if(datas.data){
   <meta property="og:description" content={datas.data.body} />
 <meta property="og:type" content="video.movie" />
 <meta property="og:url" content="https://www.demo.yatharup.com/blog/Travel/why-do-we-use-it" />
-<meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" />
+<meta property="og:image" content="https://im.ge/i/uJfLty" />
   
 </Helmet>
         <Container image={EachImage} title={datas.data.title} />
