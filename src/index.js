@@ -14,7 +14,7 @@ const APP=(
 );
  
 const rootElement = document.getElementById("root");
-if (rootElement.hasChildNodes()) {
+if (rootElement?.hasChildNodes()) {
   hydrate(APP, rootElement);
 } else {
   render(APP, rootElement);
