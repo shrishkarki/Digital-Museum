@@ -118,12 +118,17 @@ if(datas.data){
   <title>{datas.data.title}</title>
   <meta name="description" content={datas.data.body}/>
 
+  <meta property="og:URL" content="https://www.demo.yatharup.com/blog/Travel/amazing-fact-of-it/" />
 
-  <meta property="og:title" content="hello world" />
-  <meta property="og:description" content="hello worlddddd" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.demo.yatharup.com/blog/Travel/amazing-fact-of-it" />
-<meta property="og:image" content="https://im.ge/i/uJfLty" />
+    
+<meta property="og:title" content={datas.data.title} />
+    
+<meta property="og:description" content={datas.data.body} />
+
+<meta property="og:image" content="https://picsum.photos/200/300" />
+
+  
   
 </Helmet>
         <Container image={EachImage} title={datas.data.title} />
