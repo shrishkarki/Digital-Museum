@@ -1,22 +1,33 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+// import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'tw-elements';
 import { IndexContextProvider } from './Components/ContextAPi/IndexContext';
+import { hydrate, render } from "react-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  // <React.StrictMode>
+const APP=(
   <IndexContextProvider>
- <App />
+      <App />
   </IndexContextProvider>
-   
-  // </React.StrictMode>
 );
+ 
+const rootElement = document.getElementById("root");
+if (rootElement.hasChildNodes()) {
+  hydrate(APP, rootElement);
+} else {
+  render(APP, rootElement);
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+ 
+//   <IndexContextProvider>
+//  <App />
+//   </IndexContextProvider>
+
+// );
+
+
 reportWebVitals();
