@@ -119,11 +119,11 @@ if(datas.data){
   <meta name="description" content={datas.data.body}/>
 
 
-  <meta property="og:title" content="hello world" />
-  <meta property="og:description" content={datas.data.body} />
-<meta property="og:type" content="video.movie" />
-<meta property="og:url" content="https://www.demo.yatharup.com/blog/Travel/why-do-we-use-it" />
-<meta property="og:image" content="https://im.ge/i/uJfLty" />
+  {/* <meta property="og:title" content="hello world" />
+  <meta property="og:description" content="hello worlddddd" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:3000/blog/Travel/why-do-we-use-it" />
+<meta property="og:image" content="https://im.ge/i/uJfLty" /> */}
   
 </Helmet>
         <Container image={EachImage} title={datas.data.title} />

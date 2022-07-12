@@ -17,7 +17,7 @@ import OtpHandle from './Components/Authentication/OtpHandle';
 import Error10 from './Components/ErrorPage/ErrorPage';
 import ResetPassword from './Components/Authentication/ResetPassword';
 import SetNewPassword from './Components/Authentication/SetNewPassword';
-// import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 // import { usePosts } from "./Components/FetchDatas/DummyJson";
 
@@ -30,9 +30,10 @@ function App() {
     <div className='font-custom'>
       
       <Router>
-      {/* <Helmet>
-  <title>New page</title>
-</Helmet> */}
+      <Helmet>
+  <title>YATHARUP || HOME</title>
+  <meta name='description' content="Yatharup is the Nepal's First Digitalmuseum"/>
+</Helmet>
         <Navbar />
         <Routes>
           
