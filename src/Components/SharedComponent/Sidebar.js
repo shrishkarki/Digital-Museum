@@ -1,7 +1,9 @@
 import React from 'react';
 // import LumbiniImage from '../../assets/pic1.jpg'
+import useRefreshToken from '../Hooks/useRefreshToken';
 
 const Sidebar = () => {
+  const refresh=useRefreshToken();
   return (
 <div className='w-full md:w-1/2 h-52 md:h-auto bg-gradient-to-r from-amber-700 
                      to-slate-800  relative'>
@@ -9,7 +11,8 @@ const Sidebar = () => {
 
     <div className='md:absolute md:top-0 w-full h-full flex flex-col justify-center items-center'>
     <p className='uppercase text-white text-5xl font-extrabold tracking-[5px]'>Yatharup</p>
-<p className='text-white px-12 text-justify mt-2 font-bold text-2xl tracking-[2px] mt-3'>Let's Get Connected</p>
+<p className='text-white px-12 text-justify mt-2 font-bold text-2xl tracking-[2px] '>Let's Get Connected</p>
+<button onClick={()=>refresh()}>refresh</button>
     </div>
 
     </div>

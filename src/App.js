@@ -1,12 +1,13 @@
 import './App.css'
+import React,{lazy, Suspense} from 'react';
 import Navbar from "./Components/Navbar/Navbar";
 import Home from './Components/NavBar-Category/Home/Home';
-import Blog from './Components/NavBar-Category/Blog/Blog';
+// import Blog from './Components/NavBar-Category/Blog/Blog';
 import Gallery from './Components/NavBar-Category/Gallery/Gallery';
 import Contact from './Components/NavBar-Category/Contact/Contact';
 import About from './Components/NavBar-Category/About/About';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ImageContainer from "./Components/NavBar-Category/Gallery/ImageContainer";
+// import ImageContainer from "./Components/NavBar-Category/Gallery/ImageContainer";
 import FilterBlogPost from "./Components/NavBar-Category/Blog/FilterBlogPost";
 import EachBlogPost from "./Components/NavBar-Category/Blog/EachBlogPost";
 import CreateBlogs from './Components/CreateBlogs/CreateBlogs';
@@ -17,9 +18,18 @@ import OtpHandle from './Components/Authentication/OtpHandle';
 import Error10 from './Components/ErrorPage/ErrorPage';
 import ResetPassword from './Components/Authentication/ResetPassword';
 import SetNewPassword from './Components/Authentication/SetNewPassword';
-import { Helmet } from 'react-helmet';
+import UserProfileDetail from './Components/ProfileDetails/UserProfileDetail';
+import UserPosts from './Components/ProfileDetails/UserPosts';
+import UserGallery from './Components/ProfileDetails/UserGallery';
+import UserAbout from './Components/ProfileDetails/UserAbout';
+import SeoTags from './Components/SeoTags/SeoTags';
+import mainImg from './Components/Navbar/logo.png';
 
-// import { usePosts } from "./Components/FetchDatas/DummyJson";
+
+// For LazyLoading
+
+const Blog=lazy(()=>import("./Components/NavBar-Category/Blog/Blog"));
+const ImageContainer=lazy(()=>import("./Components/NavBar-Category/Gallery/ImageContainer"));
 
 
 
@@ -28,13 +38,12 @@ function App() {
   // console.log(data)
   return (
     <div className='font-custom'>
+      <SeoTags title="Yatharup || Home" description="Yatharup is the Nepal's First Digitalmuseum " img={mainImg}></SeoTags>
       
       <Router>
-      <Helmet>
-  <title>YATHARUP || HOME</title>
-  <meta name='description' content="Yatharup is the Nepal's First Digitalmuseum"/>
-</Helmet>
+      
         <Navbar />
+        <Suspense fallback={<div>Loading ............</div>}>
         <Routes>
           
 
@@ -61,13 +70,13 @@ function App() {
 
           
 
-
+         
           <Route path='blog' element={<Blog />} >
-            <Route path="All" element={<FilterBlogPost type="All" />} />
-            <Route path="Personal" element={<FilterBlogPost type="Personal" />} />
-            <Route path="Eco-Museum" element={<FilterBlogPost type="Eco-Museum" />} />
-            <Route path="History" element={<FilterBlogPost type="History" />} />
-            <Route path="Nature" element={<FilterBlogPost type="Nature" />} />
+            {/* <Route path="All" element={<FilterBlogPost type="All" />} /> */}
+            {/* <Route path="Personal" element={<FilterBlogPost type="Personal" />} /> */}
+            
+            {/* <Route path="History" element={<FilterBlogPost type="History" />} /> */}
+            {/* <Route path="Nature" element={<FilterBlogPost type="Nature" />} />
             <Route path="Archelogy" element={<FilterBlogPost type="Archelogy" />} />
             <Route path="Science" element={<FilterBlogPost type="Science" />} />
             <Route path="Art & Craft" element={<FilterBlogPost type="Art & Craft" />} />
@@ -75,8 +84,9 @@ function App() {
             <Route path="Agriculture" element={<FilterBlogPost type="Agriculture" />} />
             <Route path="Biography" element={<FilterBlogPost type="Biography" />} />
             <Route path="Botanical" element={<FilterBlogPost type="Botanical" />} />
-            <Route path="Zoology" element={<FilterBlogPost type="Zoology" />} />
+            <Route path="Zoology" element={<FilterBlogPost type="Zoology" />} /> */}
           </Route>
+        
           <Route path='contactUs' element={<Contact />} />
           <Route path='aboutUs' element={<About />} />
           <Route path='createnewblog' element={<CreateBlogs/>}/>
@@ -87,9 +97,17 @@ function App() {
           <Route path='SignUp/Verify-OTP'  element={<OtpHandle/>}/>
           <Route path='resetpassword' element={<ResetPassword/>}/>
           <Route path='resetpassword/setnewpassword' element={<SetNewPassword/>}/>
+
+
+          <Route path='userprofile' element={<UserProfileDetail/>}>
+            <Route path=':username' element={<UserAbout/>}/>
+            <Route path=":username/posts" element={<UserPosts/>}/>
+            <Route path=":username/gallery" element={<UserGallery/>}/>
+          </Route>
           <Route path='*' element={<Error10/>}/>
 
         </Routes>
+        </Suspense>
         <Footer/>
       </Router>
       {/* {data.map(dummy => <p>{dummy.discription} <img src={dummy.image} alt="hello"/></p>)} */}

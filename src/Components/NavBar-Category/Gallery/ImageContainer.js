@@ -30,7 +30,7 @@ const ImageContainer = ({ type }) => {
                 <div className="w-full relative rounded-lg   tmd:bg-none tmd:hover:bg-gradient-to-r from-amber-500 to-slate-500  m-1 md:m-2 duration-300 ease-in-out hover:scale-[1.06] ">
                 {/* <div className="w-full relative rounded-lg  hover:bg-gradient-to-r from-amber-500  to-slate-500  tmd:bg-none   m-1 md:m-2 duration-300 ease-in-out hover:scale-[1.06] "> */}
 
-                 {singleImage.map(eachImg=>(<img alt="gallery" className="  block object-cover object-center shadow-md shadow-black w-full h-full scale-100 rounded-lg mix-blend-multiply"
+                 {singleImage.map(eachImg=>(<img alt="gallery" className="  block object-cover object-center shadow-md shadow-black w-full h-56 scale-100 rounded-lg mix-blend-multiply"
                     src={eachImg.image_url}/>)) }
 
                   <div className=' tmd:opacity-0 tmd:hover:opacity-100 absolute rounded-lg top-0  right-0 bottom-0 left-0 w-full h-full  overflow-hidden bg-fixed  text-white'>

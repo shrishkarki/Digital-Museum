@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useTrippleData } from '../../FetchDatas/DummyJson';
 import { useNavigate } from 'react-router-dom';
 
 import { FaAngleRight, FaRegCommentDots } from "react-icons/fa";
+
 
 import moment from 'moment';
 
@@ -10,6 +11,7 @@ const EachCategoryLists = ({ eachCategory }) => {
 
 
     const { results } = useTrippleData(eachCategory);
+   
     const navigate = useNavigate();
    
    
@@ -17,13 +19,18 @@ const EachCategoryLists = ({ eachCategory }) => {
 
     return (
         <>
-        {/* {results && console.log(results)} */}
-            <div className='flex  '>
-                {results && results.length > 0 && <span className='bg-red-500 py-1 px-4 rounded-full text-white m-3 text-xl font-semibold'>{eachCategory}</span>}
+       
+            <div className='flex text-center h-auto items-center'>
+                {results && results.length > 0 && <div className='bg-red-500 px-2 tm:py-1 tm:px-4 rounded-full text-white ml-2 my-3 tm:ml-3 mr-1 text-lg tmd:text-xl font-semibold'>{eachCategory}</div>}
+
+          <div className='border-t-[5px] border-gray-100   w-full '></div>
+           
+           
+                <button className='text-sm tmd:text-lg text-red-500 font-bold mr-2 my-3 tm:mr-3 w-[50%] sm:w-[40%] tm:w-[22%] tmd:w-[20%] md:w-[15.4%] lg:w-[11%] xl:w-[8%]' onClick={()=>navigate(`/blog/${eachCategory}`)}>View More</button>
 
             </div>
-
-            <div className=' tm:flex gap-8 tm:gap-3  md:gap-4   mx-2  sm:mx-3 md:mx-6 lg:mx-14'>
+           
+          <div className=' tm:flex gap-8 tm:gap-3  md:gap-4   mx-2  sm:mx-3 md:mx-6 lg:mx-14'>
                 {
                     results && results.map((item, index) => {
                         let check = moment(item.pub_date, 'YYYY/MM/DD');
@@ -80,8 +87,8 @@ const EachCategoryLists = ({ eachCategory }) => {
                         )
                     })
                 }
-            </div>
-        </>
+            </div>    
+        </> 
     )
 
 

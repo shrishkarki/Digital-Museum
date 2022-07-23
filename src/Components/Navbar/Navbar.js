@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { IndexContext } from '../ContextAPi/IndexContext';
 import UserProfile from './UserProfile';
 
+
 const Navbar = () => {
   // const {token ,setToken}=useContext(IndexContext);
   const [statusDropdown, setStatusDropdown]=useState(false);
@@ -49,7 +50,7 @@ const Navbar = () => {
                 
           </div>
           {statusDropdown && <ul className='bg-slate-200 cursor-pointer absolute top-10 right-0 text-black  text-center  z-50 rounded-sm mt-2 mr-[113px]'>
-            <li className=' pt-3 px-4 pb-1 hover:bg-slate-300'>View Profile</li>
+            <li className=' pt-3 px-4 pb-1 hover:bg-slate-300' onClick={()=>navigate(`userprofile/${localStorage.getItem("username")}`)}>View Profile</li>
             <li className='flex px-4 pb-3 pt-1 hover:bg-slate-300' onClick={clickHandle}>Sign out
             <CgLogIn className='text-black text-xl mt-1 '/>
             </li>

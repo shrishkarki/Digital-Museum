@@ -1,10 +1,18 @@
-import React from 'react'
-// import Slider from './Slider';
+import React,{Suspense} from 'react'
 import LatestBlog from './LatestBlog';
-// import SliderContainer from './SliderContainer';
+
 import Header from './Section';
 
+// const LatestBlog= React.lazy(()=> import('./LatestBlog'));
+// import Slider from './Slider';
+
+// import SliderContainer from './SliderContainer';
+
+// import { IndexContext } from '../../ContextAPi/IndexContext';
+
 const Home = () => {
+  
+  
 
   return (
     <>
@@ -16,7 +24,11 @@ const Home = () => {
         
 <Header/>
       {/* </div> */}
+
+      
       <LatestBlog />
+      
+    
     </>
 
 

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate , NavLink} from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import logo from './logo.png'
 import { CgLogIn } from 'react-icons/cg';
@@ -22,11 +22,20 @@ const Navlinks = () => {
 
             <div className=''>
                 <ul className='hidden md:flex h-16 items-center '>
-                    <li className='mr-6 md:text-sm lg:text-lg lg:mr-8 xl:mr-14' ><Link to="/">HOME</Link></li>
-                    <li className='mr-6 md:text-sm lg:text-lg lg:mr-8 xl:mr-14'><Link to="/gallery">GALLERY</Link></li>
-                    <li className='mr-6 md:text-sm lg:text-lg lg:mr-8 xl:mr-14'><Link to="/blog">BLOG</Link></li>
-                    <li className='mr-6 md:text-sm lg:text-lg lg:mr-8 xl:mr-14'><Link to="/contactUs">CONTACT US</Link></li>
-                    <li className='mr-6 md:text-sm lg:text-lg lg:mr-8 xl:mr-14'><Link to="aboutUs">ABOUT US</Link></li>
+                    <li className='mr-6 md:text-sm lg:text-lg lg:mr-8 xl:mr-14' ><NavLink to="/" style={({ isActive }) => 
+                      (isActive ? {color: 'orange'} : {color: 'black'})}>HOME</NavLink></li>
+
+                    <li className='mr-6 md:text-sm lg:text-lg lg:mr-8 xl:mr-14'><NavLink to="/gallery" style={({ isActive }) => 
+                      (isActive ? {color: 'orange'} : {color: 'black'})}>GALLERY</NavLink></li>
+                      
+                    <li className='mr-6 md:text-sm lg:text-lg lg:mr-8 xl:mr-14'><NavLink to="/blog" style={({ isActive }) => 
+                      (isActive ? {color: 'orange'} : {color: 'black'})}>BLOG</NavLink></li>
+                      
+                    <li className='mr-6 md:text-sm lg:text-lg lg:mr-8 xl:mr-14'><NavLink to="/contactUs" style={({ isActive }) => 
+                      (isActive ? {color: 'orange'} : {color: 'black'})}>CONTACT US</NavLink></li>
+
+                    <li className='mr-6 md:text-sm lg:text-lg lg:mr-8 xl:mr-14'><NavLink to="aboutUs" style={({ isActive }) => 
+                      (isActive ? {color: 'orange'} : {color: 'black'})}>ABOUT US</NavLink></li>
                 </ul>
                 <div onClick={handleNav} className='sm:flex md:hidden absolute right-0 top-5 px-4'>
                     {nav ? <AiOutlineMenu style={{ fontSize: 40 }} /> : <AiOutlineClose style={{ fontSize: 40 }} />}

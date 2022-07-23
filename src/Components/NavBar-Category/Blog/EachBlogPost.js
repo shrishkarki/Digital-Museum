@@ -13,9 +13,11 @@ import authHeader from '../../SharedComponent/AuthHeader';
 // import { useNavigate } from 'react-router-dom';
 import ModalLoginPopup from '../../SharedComponent/ModalLoginPopup';
 import moment from 'moment';
-// import { FacebookShareButton } from 'react-share';
-// import {FacebookIcon} from 'react-share';
-import { Helmet } from 'react-helmet';
+
+import { FacebookShareButton } from 'react-share';
+import {FacebookIcon} from 'react-share';
+
+import SeoTags from '../../SeoTags/SeoTags';
 
 
 
@@ -106,16 +108,21 @@ if(datas.data){
   var date=check.format('D');
   var month=check.format("MMMM");
   var year=check.format("YYYY");
+  var singleImage = [...datas.data.images.slice(0, 1)].map(eachImg=>eachImg.image_url);
 
 }
-  
+
+ 
+  console.log(window.location.href);
  
   return (
     <>
+   
       {datas.data && <div className='shadow-2xl'>
-    
-<Helmet>
-  <title>{datas.data.title}</title>
+{console.log(singleImage)}
+      <SeoTags title={datas.data.title} description={datas.data.body} img={singleImage}></SeoTags>
+
+  {/* <title>{datas.data.title}</title>
   <meta name="description" content={datas.data.body}/>
 
   <meta property="og:URL" content="https://www.demo.yatharup.com/blog/Travel/amazing-fact-of-it/" />
@@ -126,11 +133,11 @@ if(datas.data){
     
 <meta property="og:description" content={datas.data.body} />
 
-<meta property="og:image" content="https://picsum.photos/200/300" />
+<meta property="og:image" content="https://picsum.photos/200/300" /> */}
 
   
   
-</Helmet>
+
         <Container image={EachImage} title={datas.data.title} />
         <div className='flex flex-col tmd:flex-row gap-7 md:gap-10 lg:gap-20 ml-[10px]  mt-3'>
           <article key={datas.data.id} className=' w-[97%] tmd:w-[50%] md:w-[45%]'>
@@ -155,11 +162,11 @@ if(datas.data){
             <p>{datas.data.body}</p>
 
             <p>Share:
-              {/* <FacebookShareButton url='https://9021-103-181-227-138.in.ngrok.io/blog/Travel/why-do-we-use-it' quote="hello worldddd" hashtag='#donee'> */}
-               {/* <FacebookShareButton url='https://www.demo.yatharup.com/blog/Travel/why-do-we-use-it' quote="hello worldddd" hashtag='#donee'>
+              <FacebookShareButton url={window.location.href} quote="hello worldddd" hashtag='#donee'/>
+               <FacebookShareButton url={window.location.href} quote="hello worldddd" hashtag='#donee'>
               
                 <FacebookIcon logoFillColor="white" round={true}></FacebookIcon>
-                </FacebookShareButton> */}
+                </FacebookShareButton>
             </p>
 
             <div className='flex gap-1 text-gray-500 mt-5 mb-3' >
@@ -193,16 +200,19 @@ if(datas.data){
          
 
         </div>
+        
 
       </div>}
 
 
-
+     
 {showModal && <ModalLoginPopup close={setShowModal}/>}
+
     </>
 
-
+   
   )
 }
+
 
 export default EachBlogPost;

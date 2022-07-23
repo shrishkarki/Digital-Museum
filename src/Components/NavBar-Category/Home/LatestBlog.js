@@ -9,7 +9,7 @@ const LatestBlog = () => {
       <Helmet>
         <title>YATHARUP || HOME</title>
       </Helmet>
-        <h1 className='text-4xl font-[750]'>Latest <span className='text-amber-500'>Blog</span></h1>
+        <h1 className='text-2xl tmd:text-4xl font-[750]'>Latest <span className='text-amber-500'>Blog</span></h1>
         <FilterCategory/>
     </div>
   )

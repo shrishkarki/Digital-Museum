@@ -1,9 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
 import showPassword from '../../assets/showpw.svg';
 import hidePassword from '../../assets/hidepw.svg';
 import { Link } from 'react-router-dom';
+import useAuth from '../Hooks/useAuth';
 
 
 const LoginData = () => {
@@ -12,6 +13,8 @@ const LoginData = () => {
   const [visibility, setVisibility] = useState("invisible");
   const [passwordShown, setPasswordShown] = useState(false);
   const [focusState, setFocusState] = useState(false);
+
+  const {setAuth}=useAuth();
 
 
   const [inputData, setInputData] = useState({
@@ -43,10 +46,14 @@ const LoginData = () => {
       url: "https://api.yatharup.com/accounts/login/",
       method: 'POST',
 
-      data:fd
+      data:fd,
+      config:{withCredentials:true}
     }).then(res => {
-
+        console.log(res)
       localStorage.setItem("token", res.data.access);
+      localStorage.setItem("username", res.data.username);
+      localStorage.setItem("refresh",res.data.refresh)
+      setAuth(res.data);
      
 
       navigate("/")

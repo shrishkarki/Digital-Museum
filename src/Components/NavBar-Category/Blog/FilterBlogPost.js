@@ -83,7 +83,6 @@ console.log(datas)
                                        <FaRegCommentDots size={24} />
                                        <span className='cursor-pointer'>{data.comment_count} Comments</span>
                                    </div>
- 
              </div>
                 )
             }): blogFilter && blogFilter.map(data=>{

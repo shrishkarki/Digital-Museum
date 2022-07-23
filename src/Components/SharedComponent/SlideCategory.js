@@ -10,6 +10,9 @@ import { useCategory } from '../FetchDatas/DummyJson';
 export default function SlideCategory({path}) {
   const [sliderRef, setSliderRef] = useState(null);
   const categoriesList=useCategory();
+  
+
+
 
   // console.log(categoriesList)
 
