@@ -1,13 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-const SeoTags = ({title,description ,img}) => {
+const SeoTags = ({title,description ,img, url}) => {
   return (
     <Helmet>
     <title>{title}</title>
     <meta name="description" content={description}/>
   
-    {/* <meta property="og:URL" content="https://www.demo.yatharup.com/blog/Travel/amazing-fact-of-it/" /> */}
+    <meta property="og:URL" content={url}/>
   
   <meta property="og:type" content="article" />
       

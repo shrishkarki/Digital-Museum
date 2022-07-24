@@ -120,7 +120,7 @@ if(datas.data){
    
       {datas.data && <div className='shadow-2xl'>
 {console.log(singleImage)}
-      <SeoTags title={datas.data.title} description={datas.data.body} img={singleImage}></SeoTags>
+      <SeoTags title={datas.data.title} description={datas.data.body} img={singleImage} url={window.location.href}></SeoTags>
 
   {/* <title>{datas.data.title}</title>
   <meta name="description" content={datas.data.body}/>
