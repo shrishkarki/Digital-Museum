@@ -38,7 +38,7 @@ function App() {
   // console.log(data)
   return (
     <div className='font-custom'>
-      <SeoTags title="Yatharup || Home" description="Yatharup is the Nepal's First Digitalmuseum " img={mainImg}></SeoTags>
+      <SeoTags title="Yatharup || Home" description="Yatharup is the Nepal's First Digitalmuseum " img={mainImg} url={window.location.href}></SeoTags>
       
       <Router>
       
