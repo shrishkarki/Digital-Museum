@@ -7,7 +7,7 @@ const SeoTags = ({title,description ,img, url}) => {
     <title>{title}</title>
     <meta name="description" content={description}/>
   
-    <meta property="og:URL" content={url}/>
+    <meta property="og:url" content={url}/>
   
   <meta property="og:type" content="article" />
       
