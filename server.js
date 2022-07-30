@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 
 const app = express();
-const port = 3000;
+const port = demo.yatharup.com;
 
 app.get("/", function (req, res) {
   const filePath = path.resolve(__dirname, "./public", "index.html");
