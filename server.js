@@ -1,9 +1,12 @@
+require("dotenv").config();
 const express = require("express");
+
 const path = require("path");
 const fs = require("fs");
 
 const app = express();
-const port = demo.yatharup.com;
+
+const port = 8080
 
 app.get("/", function (req, res) {
   const filePath = path.resolve(__dirname, "./public", "index.html");
@@ -72,4 +75,4 @@ app.get("*", function (req, res) {
   });
 });
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}`));
